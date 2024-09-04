@@ -1,0 +1,165 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "alt+down",
+    "command": "gotoLastEdit.goBack",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-gotoLastEdit.goBack",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+up",
+    "command": "gotoLastEdit.goForward",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "-gotoLastEdit.goForward",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k t",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+alt+-",
+    "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "markdown.extension.togglePreview",
+    "when": "!terminalFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown.extension.togglePreview",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+k v",
+    "command": "markdown.extension.togglePreviewToSide",
+    "when": "!terminalFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+k v",
+    "command": "-markdown.extension.togglePreviewToSide",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+f9",
+    "command": "workbench.action.tasks.reRunTask"
+  },
+  {
+    "key": "shift+alt+d",
+    "command": "editor.action.moveSelectionToPreviousFindMatch"
+  },
+  {
+    "key": "ctrl+k 2",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "ctrl+k ctrl+oem_5",
+    "command": "-workbench.action.splitEditorRight"
+  },
+  {
+    "key": "ctrl+k 3",
+    "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "ctrl+k ctrl+oem_5",
+    "command": "-workbench.action.splitEditorDown"
+  },
+  {
+    "key": "ctrl+k 1",
+    "command": "workbench.action.joinEditorInGroup",
+    "when": "sideBySideEditorActive"
+  },
+  {
+    "key": "ctrl+k ctrl+shift+oem_5",
+    "command": "-workbench.action.joinEditorInGroup",
+    "when": "sideBySideEditorActive"
+  },
+  {
+    "key": "ctrl+k 0",
+    "command": "workbench.action.joinAllGroups"
+  },
+  {
+    "key": "ctrl+k o",
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorFocus"
+  },
+
+
+  // VIM keybindings
+  {
+    "key": "ctrl+h",
+    "command": "cursorMove",
+    "args": {
+      "to": "left"
+    },
+    "when": "textInputFocus && vim.active && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "cursorMove",
+    "args": {
+      "to": "down"
+    },
+    "when": "textInputFocus && vim.active && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "cursorMove",
+    "args": {
+      "to": "up"
+    },
+    "when": "textInputFocus && vim.active && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "cursorMove",
+    "args": {
+      "to": "right"
+    },
+    "when": "textInputFocus && vim.active && vim.mode == 'Insert'"
+  },
+  {
+    // Go to previous entry in auto complete list
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible"
+  },
+  {
+    // Go to next entry in auto complete list
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetVisible"
+  },
+  {
+    // Go to previous entry in find-file or run command lists or similar
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    // Go to next entry in find-file or run command lists or similar
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  }
+]
