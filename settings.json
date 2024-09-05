@@ -307,6 +307,16 @@
         "commands": ["references-view.find"]
       },
       {
+        // toggle comment on current line / selected lines
+        "before": ["g", "c", "c"],
+        "commands": ["editor.action.commentLine"]
+      },
+      {
+        // toggle block comment, also with motions, like gc3j
+        "before": ["g", "c"],
+        "commands": ["editor.action.blockComment"]
+      },
+      {
         // Show documentation for symbol under cursor as tooltip
         "before": ["K"],
         "commands": ["editor.action.showHover"]
