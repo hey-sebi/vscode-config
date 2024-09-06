@@ -220,6 +220,7 @@
     "vim.ignorecase": true,
     "vim.smartcase": true,
     "vim.incsearch": true,
+    "vim.smartRelativeLine": true,
     "vim.handleKeys": {
         "<C-c>": false,
         "<C-v>": false,
