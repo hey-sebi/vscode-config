@@ -1,19 +1,22 @@
 {
-    // The number of spaces a tab is equal to. This setting is overridden based on the file contents when `editor.detectIndentation` is on.
+    // The number of spaces a tab is equal to. This setting is overridden based on the
+    // file contents when `editor.detectIndentation` is on.
     "editor.tabSize": 2,
     // Inserting and deleting whitespace follows tab stops
     "editor.useTabStops": false,
-    // Configure file associations to languages (e.g. "*.extension": "html"). These have precedence over the default associations of the languages installed.
     // Controls if the editor should automatically close brackets after opening them
     "editor.autoClosingBrackets": "never",
     // Controls if the minimap is shown
     "editor.minimap.enabled": false,
-    // Configure whether you receive automatic updates from an update channel. Requires a restart after change.
+    // Configure whether you receive automatic updates from an update channel. Requires a
+    // restart after change.
     "update.mode": "default",
     "breadcrumbs.enabled": true,
     "cmake.configureOnOpen": false,
     "rewrap.wrappingColumn": 90,
     "terminal.integrated.scrollback": 10000,
+    // Configure file associations to languages (e.g. "*.extension": "html"). These have
+    // precedence over the default associations of the languages installed.
     "files.associations": {
         "*.inc": "cpp",
         "*.h": "cpp",
@@ -117,7 +120,6 @@
     "files.trimTrailingWhitespace": true,
     "telemetry.telemetryLevel": "off",
     "editor.bracketPairColorization.enabled": true,
-    "workbench.colorTheme": "Arc+",
     "editor.unicodeHighlight.ambiguousCharacters": true,
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
@@ -154,12 +156,6 @@
     "explorer.autoRevealExclude": {
         "**/node_modules": false
     },
-    "blockhighlight.background": [
-        "155",
-        "155",
-        "155",
-        ".05"
-    ],
     "CppHelper.HeaderGuardPattern": "{FILE}_H_",
     "CppHelper.SourcePattern": [
         "{FILE}_impl.h",
@@ -189,7 +185,6 @@
     },
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "grunt.autoDetect": "on",
-    "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.applyToAllProfiles": [
         "files.trimTrailingWhitespace"
     ],
@@ -202,18 +197,51 @@
     "git.suggestSmartCommit": false,
     "editor.cursorSurroundingLines": 10,
     "codeium.enableConfig": {
-        "*": true
+      "*": false
     },
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
+
+    // -------------------------------------------------------------------
+    // Doxygen settings
+    // -------------------------------------------------------------------
     "doxdocgen.cpp.ctorText": "Constructor",
     "doxdocgen.cpp.dtorText": "Destructor",
     "doxdocgen.generic.returnTemplate": "@returns",
 
-
-
-    // VIM settings
+    // -------------------------------------------------------------------
+    // Catppuccin color theme settings
+    // based on (from https://github.com/catppuccin/vscode)
+    // -------------------------------------------------------------------
+    "editor.semanticHighlighting.enabled": true,
+    // prevent VSCode from modifying the terminal colors
+    "terminal.integrated.minimumContrastRatio": 1,
+    // make the window's titlebar use the workbench colors
+    "window.titleBarStyle": "custom",
+    // set the accent color
+    "catppuccin.accentColor": "mauve",
+    // use the accent color on the statusBar as well
+    "catppuccin.customUIColors": {
+      "macchiato": {
+        "statusBar.foreground": "accent"
+      }
+    },
+    // font decorations
+    "catppuccin.italicKeywords": false,
+    "catppuccin.italicComments": false,
+    "catppuccin.boldKeywords": false,
+    // workbench flat appearance
+    "catppuccin.workbenchMode": "flat",
+    // bracket pair colorization
+    "catppuccin.bracketMode": "rainbow",
+    // Files with '.h' extension will have the `C++` icon.
+    "catppuccin-icons.associations.extensions": {
+      "h": "cpp"
+    },
+    // -------------------------------------------------------------------
+    // VSCode VIM settings
+    // -------------------------------------------------------------------
     "vim.leader": " ",
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
@@ -387,5 +415,6 @@
         "before": ["<leader>","p"],
         "commands": ["editor.action.clipboardPasteAction"]
       }
-    ]
+    ],
+    "workbench.colorTheme": "Arc+ (Dark Monochrome)"
 }
