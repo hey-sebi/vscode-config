@@ -8,11 +8,12 @@
     "editor.autoClosingBrackets": "never",
     // Controls if the minimap is shown
     "editor.minimap.enabled": false,
+    "editor.fontFamily": "JetBrains Mono Nerd Font",
+    "terminal.integrated.fontFamily": "Consolas",
     // Configure whether you receive automatic updates from an update channel. Requires a
     // restart after change.
     "update.mode": "default",
     "breadcrumbs.enabled": true,
-    "cmake.configureOnOpen": false,
     "rewrap.wrappingColumn": 90,
     "terminal.integrated.scrollback": 10000,
     // Configure file associations to languages (e.g. "*.extension": "html"). These have
@@ -100,22 +101,14 @@
         "*impl.h": "cpp"
     },
     "editor.renderWhitespace": "none",
-    "cmake.autoSelectActiveFolder": false,
-    "cmake.buildBeforeRun": false,
-    "cmake.clearOutputBeforeBuild": false,
+
     "[cpp]": {
-        "editor.wordBasedSuggestions": "off",
+        "editor.wordBasedSuggestions": "allDocuments",
         "editor.suggest.insertMode": "insert",
         "editor.semanticHighlighting.enabled": true
     },
     "editor.copyWithSyntaxHighlighting": false,
     "editor.largeFileOptimizations": false,
-    "remote.SSH.remotePlatform": {
-        "mlr-workstation": "linux",
-        "mlr-lb-161": "linux",
-        "mlr-lb-0208": "linux",
-        "mlr-lb-ecsim105": "windows"
-    },
     "security.workspace.trust.untrustedFiles": "open",
     "files.trimTrailingWhitespace": true,
     "telemetry.telemetryLevel": "off",
@@ -145,60 +138,67 @@
             "source": "Git Bash"
         }
     },
-    "gitlens.views.commitDetails.files.layout": "list",
     "editor.accessibilitySupport": "off",
-    "projectManager.git.ignoredFolders": [
-        "out",
-        "typings",
-        "test",
-        ".haxelib"
-    ],
-    "explorer.autoRevealExclude": {
+     "explorer.autoRevealExclude": {
         "**/node_modules": false
     },
-    "CppHelper.HeaderGuardPattern": "{FILE}_H_",
-    "CppHelper.SourcePattern": [
-        "{FILE}_impl.h",
-        "{FILE}.inl",
-        "{FILE}.cpp",
-        "{FILE}.cxx",
-        "{FILE}.cc",
-        "{FILE}.cp",
-        "{FILE}.c",
-        "/src/{FILE}.inl",
-        "/src/{FILE}.cpp",
-        "/src/{FILE}.cxx",
-        "/src/{FILE}.cc",
-        "/src/{FILE}.cp",
-        "/src/{FILE}.c",
-        "/source/{FILE}.inl",
-        "/source/{FILE}.cpp",
-        "/source/{FILE}.cxx",
-        "/source/{FILE}.cc",
-        "/source/{FILE}.cp",
-        "/source/{FILE}.c"
-    ],
+    "editor.semanticHighlighting.enabled": true,
+    // prevent VSCode from modifying the terminal colors
+    "terminal.integrated.minimumContrastRatio": 1,
+    // make the window's titlebar use the workbench colors
+    "window.titleBarStyle": "custom",
+
+    "workbench.colorTheme": "Alt Catppuccin Frappé",
+    "alt-catppuccin.syntaxMode" : "ms",
+
+    // -------------------------------------------------------------------
+    // Catppuccin color theme settings
+    // based on (from https://github.com/catppuccin/vscode)
+    // I use: dooez.alt-catppuccin-vsc
+    // -------------------------------------------------------------------
+
+    // set the accent color
+    // "catppuccin.accentColor": "mauve",
+    // use the accent color on the statusBar as well
+    // "catppuccin.customUIColors": {
+    //   "macchiato": {
+    //     "statusBar.foreground": "accent"
+    //   }
+    // },
+    // font decorations
+    "alt-catppuccin.italicKeywords": false,
+    "alt-catppuccin.italicComments": false,
+    "alt-catppuccin.boldKeywords": false,
+    // workbench flat appearance
+    "alt-catppuccin.workbenchMode": "flat",
+    // bracket pair colorization
+    "alt-catppuccin.bracketMode": "rainbow",
+
     "workbench.colorCustomizations": {
-        "[Arc+]": {
-            "list.activeSelectionBackground": "#78777a"
-        }
+        // "[Arc+]": {
+        //     "list.activeSelectionBackground": "#78777a"
+        // },
+        // "[Night Fox (Dark) (no italics)]": {
+        //     "statusBar.background" : "#1A1A1A",
+        //     // "statusBar.noFolderBackground" : "#212121",
+        //     // "statusBar.debuggingBackground": "#263238"
+        // },
+        // "[Night Fox (Dark Blue) (no italics)]": {
+        //     "statusBar.background" : "#1A1926",
+        //     // "statusBar.noFolderBackground" : "#212121",
+        //     // "statusBar.debuggingBackground": "#263238"
+        // }
     },
+
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "grunt.autoDetect": "on",
     "workbench.settings.applyToAllProfiles": [
         "files.trimTrailingWhitespace"
     ],
-    "cmake.showOptionsMovedNotification": false,
     "diffEditor.ignoreTrimWhitespace": false,
-    "cmake.pinnedCommands": [
-        "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
-    ],
+
     "git.suggestSmartCommit": false,
     "editor.cursorSurroundingLines": 10,
-    "codeium.enableConfig": {
-      "*": false
-    },
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
@@ -210,211 +210,8 @@
     "doxdocgen.cpp.dtorText": "Destructor",
     "doxdocgen.generic.returnTemplate": "@returns",
 
-    // -------------------------------------------------------------------
-    // Catppuccin color theme settings
-    // based on (from https://github.com/catppuccin/vscode)
-    // -------------------------------------------------------------------
-    "editor.semanticHighlighting.enabled": true,
-    // prevent VSCode from modifying the terminal colors
-    "terminal.integrated.minimumContrastRatio": 1,
-    // make the window's titlebar use the workbench colors
-    "window.titleBarStyle": "custom",
-    // set the accent color
-    "catppuccin.accentColor": "mauve",
-    // use the accent color on the statusBar as well
-    "catppuccin.customUIColors": {
-      "macchiato": {
-        "statusBar.foreground": "accent"
-      }
+    "remote.SSH.remotePlatform": {
+        "mlr-lb-161": "linux"
     },
-    // font decorations
-    "catppuccin.italicKeywords": false,
-    "catppuccin.italicComments": false,
-    "catppuccin.boldKeywords": false,
-    // workbench flat appearance
-    "catppuccin.workbenchMode": "flat",
-    // bracket pair colorization
-    "catppuccin.bracketMode": "rainbow",
-    // Files with '.h' extension will have the `C++` icon.
-    "catppuccin-icons.associations.extensions": {
-      "h": "cpp"
-    },
-    // -------------------------------------------------------------------
-    // VSCode VIM settings
-    // -------------------------------------------------------------------
-    "vim.leader": " ",
-    "vim.useSystemClipboard": true,
-    "vim.hlsearch": true,
-    "vim.ignorecase": true,
-    "vim.smartcase": true,
-    "vim.incsearch": true,
-    "vim.smartRelativeLine": true,
-    "vim.handleKeys": {
-        "<C-c>": false,
-        "<C-v>": false,
-        "<C-x>": false,
-        "<C-a>": false,
-        "<C-f>": false
-    },
-    "vim.normalModeKeyBindingsNonRecursive": [
-      {
-        "before": ["<leader>", "e"],
-        "commands": ["workbench.view.explorer"]
-      },
-      {
-        "before": ["<leader>", "b"],
-        "commands": ["workbench.action.showAllEditors"]
-      },
-      {
-        "before": ["<leader>", "q"],
-        "commands": ["workbench.action.closeActiveEditor"]
-      },
-      {
-        "before": ["<leader>", "w"],
-        "commands": ["workbench.action.files.save"]
-      },
-      {
-        "before": ["<leader>", "h"],
-        "commands": ["workbench.action.focusSideBar"]
-      },
-      {
-        "before": ["<leader>", "t"],
-        "commands": ["workbench.action.terminal.toggleTerminal"]
-      },
-      {
-        // find-file (VSCode Ctrl+P)
-        "before": ["<leader>", "f", "f"],
-        "commands": ["workbench.action.quickOpen"]
-      },
-      {
-        "before": ["<leader>", "f", "g"],
-        "commands": ["workbench.action.findInFiles"]
-      },
-      {
-        "before": ["<leader>", "f", "s"],
-        "commands": ["workbench.action.files.save"]
-      },
-      {
-        "before": ["<leader>", "f", "w"],
-        "commands": ["workbench.action.files.saveAll"]
-      },
-      {
-        "before": ["<leader>", "f", "c"],
-        "commands": ["workbench.action.files.close"]
-      },
-      {
-        "before": ["<leader>", "f", "v"],
-        "commands": ["workbench.action.splitEditorRight"]
-      },
-      {
-        "before": ["<leader>", "f", "h"],
-        "commands": ["workbench.action.splitEditorLeft"]
-      },
-      {
-        "before": ["<leader>", "f"],
-        "commands": ["workbench.action.files.openFile"]
-      },
-      {
-        "before": ["<leader>", "p"],
-        "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
-      },
-      {
-        "before": ["<leader>", "r", "n"],
-        "commands": ["editor.action.rename"]
-      },
-      {
-        // Goto definition
-        "before": ["g", "d"],
-        "commands": ["editor.action.revealDefinition"]
-      },
-      {
-        "before": ["g", "D"],
-        "commands": ["editor.action.revealDeclaration"]
-      },
-      {
-        "before": ["g", "r"],
-        "commands": ["references-view.find"]
-      },
-      {
-        // toggle comment on current line / selected lines
-        "before": ["g", "c", "c"],
-        "commands": ["editor.action.commentLine"]
-      },
-      {
-        // toggle block comment, also with motions, like gc3j
-        "before": ["g", "c"],
-        "commands": ["editor.action.blockComment"]
-      },
-      {
-        // Show documentation for symbol under cursor as tooltip
-        "before": ["K"],
-        "commands": ["editor.action.showHover"]
-      },
-      {
-        "before": ["<leader>", "c", "a"],
-        "commands": ["editor.action.quickFix"]
-      },
-      {
-        "before": ["<leader>", "c", "r"],
-        "commands": ["editor.action.rename"]
-      },
-      {
-        "before": ["<leader>", "c", "f"],
-        "commands": ["editor.action.formatDocument"]
-      },
-      {
-        "before": ["<leader>", "c", "d"],
-        "commands": ["editor.action.revealDefinitionAside"]
-      },
-      {
-        // Goto next error
-        "before": ["<leader>", "c", "e"],
-        "commands": ["editor.action.marker.next"]
-      },
-      {
-        // Goto previous error
-        "before": ["<leader>", "c", "p"],
-        "commands": ["editor.action.marker.prev"]
-      },
-      {
-        // Switch between source and header file (supported only in C/C++ files)
-        "before": ["<leader>", "a"],
-        "commands": ["C_Cpp.SwitchHeaderSource"]
-      }
-    ],
-    "vim.insertModeKeyBindings": [
-      // Ctrl+H, Ctrl+J, Ctrl+K, Ctrl+L: navigation in insert mode similar to normal mode
-      // so that we don't have to use the arrow keys
-      {
-        "before": ["<C-h>" ],
-        "after": ["<left>"]
-      },
-      {
-        "before": ["<C-j>"],
-        "after": ["<down>"]
-      },
-      {
-        "before": ["<C-k>"],
-        "after": ["<up>"]
-      },
-      {
-        "before": ["<C-l>"],
-        "after": ["<right>"]
-      }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-      {
-        "before": ["<leader>","y"],
-        "commands": ["editor.action.clipboardCopyAction"]
-      },
-      {
-        "before": ["<leader>","d"],
-        "commands": ["editor.action.clipboardCutAction"]
-      },
-      {
-        "before": ["<leader>","p"],
-        "commands": ["editor.action.clipboardPasteAction"]
-      }
-    ],
-    "workbench.colorTheme": "Arc+ (Dark Monochrome)"
+    "workbench.activityBar.location": "bottom"
 }
