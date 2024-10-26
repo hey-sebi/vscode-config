@@ -1,217 +1,309 @@
 {
-    // The number of spaces a tab is equal to. This setting is overridden based on the
-    // file contents when `editor.detectIndentation` is on.
-    "editor.tabSize": 2,
-    // Inserting and deleting whitespace follows tab stops
-    "editor.useTabStops": false,
-    // Controls if the editor should automatically close brackets after opening them
-    "editor.autoClosingBrackets": "never",
-    // Controls if the minimap is shown
-    "editor.minimap.enabled": false,
-    "editor.fontFamily": "JetBrains Mono Nerd Font",
-    "terminal.integrated.fontFamily": "Consolas",
-    // Configure whether you receive automatic updates from an update channel. Requires a
-    // restart after change.
-    "update.mode": "default",
-    "breadcrumbs.enabled": true,
-    "rewrap.wrappingColumn": 90,
-    "terminal.integrated.scrollback": 10000,
-    // Configure file associations to languages (e.g. "*.extension": "html"). These have
-    // precedence over the default associations of the languages installed.
-    "files.associations": {
-        "*.inc": "cpp",
-        "*.h": "cpp",
-        "*.in": "cpp",
-        "cctype": "cpp",
-        "clocale": "cpp",
-        "cmath": "cpp",
-        "csetjmp": "cpp",
-        "csignal": "cpp",
-        "cstdarg": "cpp",
-        "cstddef": "cpp",
-        "cstdio": "cpp",
-        "cstdlib": "cpp",
-        "cstring": "cpp",
-        "ctime": "cpp",
-        "cwchar": "cpp",
-        "cwctype": "cpp",
-        "any": "cpp",
-        "array": "cpp",
-        "atomic": "cpp",
-        "strstream": "cpp",
-        "bit": "cpp",
-        "*.tcc": "cpp",
-        "bitset": "cpp",
-        "cfenv": "cpp",
-        "charconv": "cpp",
-        "chrono": "cpp",
-        "cinttypes": "cpp",
-        "codecvt": "cpp",
-        "complex": "cpp",
-        "condition_variable": "cpp",
-        "cstdint": "cpp",
-        "cuchar": "cpp",
-        "deque": "cpp",
-        "forward_list": "cpp",
-        "list": "cpp",
-        "map": "cpp",
-        "set": "cpp",
-        "unordered_map": "cpp",
-        "unordered_set": "cpp",
-        "vector": "cpp",
-        "exception": "cpp",
-        "algorithm": "cpp",
-        "functional": "cpp",
-        "iterator": "cpp",
-        "memory": "cpp",
-        "memory_resource": "cpp",
-        "numeric": "cpp",
-        "optional": "cpp",
-        "random": "cpp",
-        "ratio": "cpp",
-        "regex": "cpp",
-        "string": "cpp",
-        "string_view": "cpp",
-        "system_error": "cpp",
-        "tuple": "cpp",
-        "type_traits": "cpp",
-        "utility": "cpp",
-        "fstream": "cpp",
-        "future": "cpp",
-        "initializer_list": "cpp",
-        "iomanip": "cpp",
-        "iosfwd": "cpp",
-        "iostream": "cpp",
-        "istream": "cpp",
-        "limits": "cpp",
-        "mutex": "cpp",
-        "new": "cpp",
-        "ostream": "cpp",
-        "scoped_allocator": "cpp",
-        "shared_mutex": "cpp",
-        "sstream": "cpp",
-        "stdexcept": "cpp",
-        "streambuf": "cpp",
-        "thread": "cpp",
-        "typeindex": "cpp",
-        "typeinfo": "cpp",
-        "valarray": "cpp",
-        "variant": "cpp",
-        "*.rcp": "cdl",
-        "*impl.h": "cpp"
+  // The number of spaces a tab is equal to. This setting is overridden based on the
+  // file contents when `editor.detectIndentation` is on.
+  "editor.tabSize": 2,
+  // Inserting and deleting whitespace follows tab stops
+  "editor.useTabStops": false,
+  // Controls if the editor should automatically close brackets after opening them
+  "editor.autoClosingBrackets": "never",
+  // Controls if the minimap is shown
+  "editor.minimap.enabled": false,
+  // "editor.fontFamily": "Meslo LGL Mono Nerd Font", //JetBrains Mono Nerd Font",
+  "editor.fontFamily": "JetBrains Mono Nerd Font",
+  "terminal.integrated.fontFamily": "Consolas",
+  // Configure whether you receive automatic updates from an update channel. Requires a
+  // restart after change.
+  "update.mode": "default",
+  "breadcrumbs.enabled": false,
+  "rewrap.wrappingColumn": 90,
+  "terminal.integrated.scrollback": 10000,
+  // Configure file associations to languages (e.g. "*.extension": "html"). These have
+  // precedence over the default associations of the languages installed.
+  "files.associations": {
+    "*.inc": "cpp",
+    "*.h": "cpp",
+    "*.in": "cpp",
+    "cctype": "cpp",
+    "clocale": "cpp",
+    "cmath": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp",
+    "cstdarg": "cpp",
+    "cstddef": "cpp",
+    "cstdio": "cpp",
+    "cstdlib": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "cwchar": "cpp",
+    "cwctype": "cpp",
+    "any": "cpp",
+    "array": "cpp",
+    "atomic": "cpp",
+    "strstream": "cpp",
+    "bit": "cpp",
+    "*.tcc": "cpp",
+    "bitset": "cpp",
+    "cfenv": "cpp",
+    "charconv": "cpp",
+    "chrono": "cpp",
+    "cinttypes": "cpp",
+    "codecvt": "cpp",
+    "complex": "cpp",
+    "condition_variable": "cpp",
+    "cstdint": "cpp",
+    "cuchar": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "exception": "cpp",
+    "algorithm": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "memory": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "optional": "cpp",
+    "random": "cpp",
+    "ratio": "cpp",
+    "regex": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "system_error": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "utility": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "initializer_list": "cpp",
+    "iomanip": "cpp",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "istream": "cpp",
+    "limits": "cpp",
+    "mutex": "cpp",
+    "new": "cpp",
+    "ostream": "cpp",
+    "scoped_allocator": "cpp",
+    "shared_mutex": "cpp",
+    "sstream": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp",
+    "typeinfo": "cpp",
+    "valarray": "cpp",
+    "variant": "cpp",
+    "*.rcp": "cdl",
+    "*impl.h": "cpp"
+  },
+  "editor.renderWhitespace": "none",
+  "[cpp]": {
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.suggest.insertMode": "insert",
+    "editor.semanticHighlighting.enabled": true
+  },
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.largeFileOptimizations": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.trimTrailingWhitespace": true,
+  "telemetry.telemetryLevel": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+  "cmake.configureOnEdit": false,
+  "terminal.integrated.altClickMovesCursor": false,
+  "search.exclude": {
+    "**/node_modules": false
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
     },
-    "editor.renderWhitespace": "none",
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    }
+  },
+  "editor.accessibilitySupport": "off",
+  "explorer.autoRevealExclude": {
+    "**/node_modules": false
+  },
+  "editor.semanticHighlighting.enabled": true,
+  // prevent VSCode from modifying the terminal colors
+  "terminal.integrated.minimumContrastRatio": 1,
+  // make the window's titlebar use the workbench colors
+  "window.titleBarStyle": "custom",
 
-    "[cpp]": {
-        "editor.wordBasedSuggestions": "allDocuments",
-        "editor.suggest.insertMode": "insert",
-        "editor.semanticHighlighting.enabled": true
-    },
-    "editor.copyWithSyntaxHighlighting": false,
-    "editor.largeFileOptimizations": false,
-    "security.workspace.trust.untrustedFiles": "open",
-    "files.trimTrailingWhitespace": true,
-    "telemetry.telemetryLevel": "off",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.unicodeHighlight.ambiguousCharacters": true,
-    "editor.autoClosingQuotes": "never",
-    "editor.autoSurround": "never",
-    "cmake.configureOnEdit": false,
-    "terminal.integrated.altClickMovesCursor": false,
-    "search.exclude": {
-        "**/node_modules": false
-    },
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell"
-        },
-        "Command Prompt": {
-            "path": [
-                "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
+  // -------------------------------------------------------------------
+  // Tokyo Night color theme and customization
+  // -------------------------------------------------------------------
+  "workbench.colorTheme": "Tokyo Night",
+  // disable usage of italics
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night]": {
+      "textMateRules": [{
+            "scope": [
+                "comment",
+                "meta.var.expr storage.type",
+                "keyword.control.flow",
+                "keyword.control.return",
+                "meta.directive.vue punctuation.separator.key-value.html",
+                "meta.directive.vue entity.other.attribute-name.html",
+                "tag.decorator.js entity.name.tag.js",
+                "tag.decorator.js punctuation.definition.tag.js",
+                "storage.modifier"
             ],
-            "args": [],
-            "icon": "terminal-cmd"
-        },
-        "Git Bash": {
-            "source": "Git Bash"
-        }
+            "settings": {
+                "fontStyle": ""
+            }
+      }]
+    }
+  },
+
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "grunt.autoDetect": "on",
+  "workbench.settings.applyToAllProfiles": [
+    "files.trimTrailingWhitespace"
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.suggestSmartCommit": false,
+  "editor.cursorSurroundingLines": 10,
+  // -------------------------------------------------------------------
+  // Doxygen settings
+  // -------------------------------------------------------------------
+  "doxdocgen.cpp.ctorText": "Constructor",
+  "doxdocgen.cpp.dtorText": "Destructor",
+  "doxdocgen.generic.returnTemplate": "@returns",
+  "remote.SSH.remotePlatform": {
+    "mlr-lb-161": "linux"
+  },
+
+  // -------------------------------------------------------------------
+  // VSCode VIM settings
+  // -------------------------------------------------------------------
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vim.leader": " ",
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.incsearch": true,
+  "vim.smartRelativeLine": true,
+  "vim.normalModeKeyBindings": [
+    {
+      // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
+      "before" : ["u"],
+      "commands" : [ "undo" ]
     },
-    "editor.accessibilitySupport": "off",
-     "explorer.autoRevealExclude": {
-        "**/node_modules": false
-    },
-    "editor.semanticHighlighting.enabled": true,
-    // prevent VSCode from modifying the terminal colors
-    "terminal.integrated.minimumContrastRatio": 1,
-    // make the window's titlebar use the workbench colors
-    "window.titleBarStyle": "custom",
-
-    "workbench.colorTheme": "Alt Catppuccin Frappé",
-    "alt-catppuccin.syntaxMode" : "ms",
-
-    // -------------------------------------------------------------------
-    // Catppuccin color theme settings
-    // based on (from https://github.com/catppuccin/vscode)
-    // I use: dooez.alt-catppuccin-vsc
-    // -------------------------------------------------------------------
-
-    // set the accent color
-    // "catppuccin.accentColor": "mauve",
-    // use the accent color on the statusBar as well
-    // "catppuccin.customUIColors": {
-    //   "macchiato": {
-    //     "statusBar.foreground": "accent"
-    //   }
-    // },
-    // font decorations
-    "alt-catppuccin.italicKeywords": false,
-    "alt-catppuccin.italicComments": false,
-    "alt-catppuccin.boldKeywords": false,
-    // workbench flat appearance
-    "alt-catppuccin.workbenchMode": "flat",
-    // bracket pair colorization
-    "alt-catppuccin.bracketMode": "rainbow",
-
-    "workbench.colorCustomizations": {
-        // "[Arc+]": {
-        //     "list.activeSelectionBackground": "#78777a"
-        // },
-        // "[Night Fox (Dark) (no italics)]": {
-        //     "statusBar.background" : "#1A1A1A",
-        //     // "statusBar.noFolderBackground" : "#212121",
-        //     // "statusBar.debuggingBackground": "#263238"
-        // },
-        // "[Night Fox (Dark Blue) (no italics)]": {
-        //     "statusBar.background" : "#1A1926",
-        //     // "statusBar.noFolderBackground" : "#212121",
-        //     // "statusBar.debuggingBackground": "#263238"
-        // }
-    },
-
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "grunt.autoDetect": "on",
-    "workbench.settings.applyToAllProfiles": [
-        "files.trimTrailingWhitespace"
-    ],
-    "diffEditor.ignoreTrimWhitespace": false,
-
-    "git.suggestSmartCommit": false,
-    "editor.cursorSurroundingLines": 10,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-
-    // -------------------------------------------------------------------
-    // Doxygen settings
-    // -------------------------------------------------------------------
-    "doxdocgen.cpp.ctorText": "Constructor",
-    "doxdocgen.cpp.dtorText": "Destructor",
-    "doxdocgen.generic.returnTemplate": "@returns",
-
-    "remote.SSH.remotePlatform": {
-        "mlr-lb-161": "linux"
-    },
-    "workbench.activityBar.location": "bottom"
+    {
+      // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
+      "before" : ["<C-r>"],
+      "commands" : [ "redo" ]
+    }
+  ]
+  // "vim.handleKeys": {
+  //   "<C-c>": false,
+  //   "<C-v>": false,
+  //   "<C-x>": false,
+  //   "<C-a>": false,
+  //   "<C-f>": false
+  // },
+  // "vim.normalModeKeyBindingsNonRecursive": [
+  //   {
+  //     "before": [ "<leader>", "w" ],
+  //     "commands": [ "workbench.action.files.save" ]
+  //   },
+  //   {
+  //     "before": [ "<leader>", "f" ],
+  //     "commands": [ "workbench.action.files.openFile" ]
+  //   },
+  //   {
+  //     "before": [ "<leader>", "p" ],
+  //     "commands": [ "workbench.action.showAllEditorsByMostRecentlyUsed" ]
+  //   },
+  //   {
+  //     // toggle comment on current line / selected lines
+  //     "before": [ "g", "c", "c" ],
+  //     "commands": [ "editor.action.commentLine" ]
+  //   },
+  //   {
+  //     // toggle block comment, also with motions, like gc3j
+  //     "before": [ "g", "c" ],
+  //     "commands": [ "editor.action.blockComment" ]
+  //   },
+  //   {
+  //     "before": [ "<leader>", "c", "f" ],
+  //     "commands": [ "editor.action.formatDocument" ]
+  //   },
+  //   {
+  //     "before": [ "<leader>", "c", "d" ],
+  //     "commands": [ "editor.action.revealDefinitionAside" ]
+  //   },
+  //   {
+  //     // Goto next error
+  //     "before": [ "<leader>", "c", "e" ],
+  //     "commands": [ "editor.action.marker.next" ]
+  //   },
+  //   {
+  //     // Goto previous error
+  //     "before": [ "<leader>", "c", "p" ],
+  //     "commands": [ "editor.action.marker.prev" ]
+  //   },
+  //   {
+  //     // Switch between source and header file (supported only in C/C++ files)
+  //     "before": [ "<leader>", "a" ],
+  //     "commands": [ "C_Cpp.SwitchHeaderSource" ]
+  //   }
+  // ],
+  // "vim.insertModeKeyBindings": [
+  //   // Ctrl+H, Ctrl+J, Ctrl+K, Ctrl+L: navigation in insert mode similar to normal mode
+  //   // so that we don't have to use the arrow keys
+  //   {
+  //     "before": [ "<C-h>" ],
+  //     "after": [ "<left>" ]
+  //   },
+  //   {
+  //     "before": [ "<C-j>" ],
+  //     "after": [ "<down>" ]
+  //   },
+  //   {
+  //     "before": [ "<C-k>" ],
+  //     "after": [ "<up>" ]
+  //   },
+  //   {
+  //     "before": [ "<C-l>" ],
+  //     "after": [ "<right>" ]
+  //   }
+  // ],
+  // "vim.visualModeKeyBindingsNonRecursive": [
+  //   {
+  //     "before": [ "<leader>", "y" ],
+  //     "commands": [ "editor.action.clipboardCopyAction" ]
+  //   },
+  //   {
+  //     "before": [ "<leader>", "d" ],
+  //     "commands": [ "editor.action.clipboardCutAction"
+  //     ]
+  //   },
+  //   {
+  //     "before": [ "<leader>", "p" ],
+  //     "commands": [ "editor.action.clipboardPasteAction" ]
+  //   }
+  // ]
 }
