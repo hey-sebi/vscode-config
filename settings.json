@@ -116,7 +116,6 @@
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.autoClosingQuotes": "never",
   "editor.autoSurround": "never",
-  "cmake.configureOnEdit": false,
   "terminal.integrated.altClickMovesCursor": false,
   "search.exclude": {
     "**/node_modules": false
@@ -147,32 +146,7 @@
   "terminal.integrated.minimumContrastRatio": 1,
   // make the window's titlebar use the workbench colors
   "window.titleBarStyle": "custom",
-
-  // -------------------------------------------------------------------
-  // Tokyo Night color theme and customization
-  // -------------------------------------------------------------------
-  "workbench.colorTheme": "Tokyo Night",
   // disable usage of italics
-  "editor.tokenColorCustomizations": {
-    "[Tokyo Night]": {
-      "textMateRules": [{
-            "scope": [
-                "comment",
-                "meta.var.expr storage.type",
-                "keyword.control.flow",
-                "keyword.control.return",
-                "meta.directive.vue punctuation.separator.key-value.html",
-                "meta.directive.vue entity.other.attribute-name.html",
-                "tag.decorator.js entity.name.tag.js",
-                "tag.decorator.js punctuation.definition.tag.js",
-                "storage.modifier"
-            ],
-            "settings": {
-                "fontStyle": ""
-            }
-      }]
-    }
-  },
 
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "grunt.autoDetect": "on",
@@ -182,12 +156,24 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "git.suggestSmartCommit": false,
   "editor.cursorSurroundingLines": 10,
+  "extensions.ignoreRecommendations": true,
+
   // -------------------------------------------------------------------
   // Doxygen settings
   // -------------------------------------------------------------------
   "doxdocgen.cpp.ctorText": "Constructor",
   "doxdocgen.cpp.dtorText": "Destructor",
   "doxdocgen.generic.returnTemplate": "@returns",
+  // -------------------------------------------------------------------
+  // CMake
+  // -------------------------------------------------------------------
+  "cmake.configureOnEdit": false,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showOptionsMovedNotification": false,
+
   "remote.SSH.remotePlatform": {
     "mlr-lb-161": "linux"
   },
@@ -216,94 +202,140 @@
       "before" : ["<C-r>"],
       "commands" : [ "redo" ]
     }
-  ]
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before":["ESC"],
+      "commands": [
+        {
+          "command": ":nohl"
+        }
+      ]
+    }
+  ],
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.duration": 250,
+
+  "workbench.colorTheme": "ReUI",
+  "editor.tokenColorCustomizations": {
+    // disable italic font
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.block.documentation",
+          "comment.line",
+          "constant",
+          "constant.character",
+          "constant.character.escape",
+          "constant.numeric",
+          "constant.numeric.integer",
+          "constant.numeric.float",
+          "constant.numeric.hex",
+          "constant.numeric.octal",
+          "constant.other",
+          "constant.regexp",
+          "constant.rgb-value",
+          "emphasis",
+          "entity",
+          "entity.name",
+          "entity.name.class",
+          "entity.name.function",
+          "entity.name.method",
+          "entity.name.section",
+          "entity.name.selector",
+          "entity.name.tag",
+          "entity.name.type",
+          "entity.other",
+          "entity.other.attribute-name",
+          "entity.other.inherited-class",
+          "invalid",
+          "invalid.deprecated",
+          "invalid.illegal",
+          "keyword",
+          "keyword.control",
+          "keyword.operator",
+          "keyword.operator.new",
+          "keyword.operator.assignment",
+          "keyword.operator.arithmetic",
+          "keyword.operator.logical",
+          "keyword.other",
+          "markup",
+          "markup.bold",
+          "markup.changed",
+          "markup.deleted",
+          "markup.heading",
+          "markup.inline.raw",
+          "markup.inserted",
+          "markup.italic",
+          "markup.list",
+          "markup.list.numbered",
+          "markup.list.unnumbered",
+          "markup.other",
+          "markup.quote",
+          "markup.raw",
+          "markup.underline",
+          "markup.underline.link",
+          "meta",
+          "meta.block",
+          "meta.cast",
+          "meta.class",
+          "meta.function",
+          "meta.function-call",
+          "meta.preprocessor",
+          "meta.return-type",
+          "meta.selector",
+          "meta.tag",
+          "meta.type.annotation",
+          "meta.type",
+          "punctuation.definition.string.begin",
+          "punctuation.definition.string.end",
+          "punctuation.separator",
+          "punctuation.separator.continuation",
+          "punctuation.terminator",
+          "storage",
+          "storage.modifier",
+          "storage.type",
+          "string",
+          "string.interpolated",
+          "string.other",
+          "string.quoted",
+          "string.quoted.double",
+          "string.quoted.other",
+          "string.quoted.single",
+          "string.quoted.triple",
+          "string.regexp",
+          "string.unquoted",
+          "strong",
+          "support",
+          "support.class",
+          "support.constant",
+          "support.function",
+          "support.other",
+          "support.type",
+          "support.type.property-name",
+          "support.variable",
+          "variable",
+          "variable.language",
+          "variable.name",
+          "variable.other",
+          "variable.other.readwrite",
+          "variable.parameter",
+          "storage.type.ts",
+          "keyword.control.flow.ts"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  }
+}
   // "vim.handleKeys": {
   //   "<C-c>": false,
   //   "<C-v>": false,
   //   "<C-x>": false,
   //   "<C-a>": false,
   //   "<C-f>": false
-  // },
-  // "vim.normalModeKeyBindingsNonRecursive": [
-  //   {
-  //     "before": [ "<leader>", "w" ],
-  //     "commands": [ "workbench.action.files.save" ]
-  //   },
-  //   {
-  //     "before": [ "<leader>", "f" ],
-  //     "commands": [ "workbench.action.files.openFile" ]
-  //   },
-  //   {
-  //     "before": [ "<leader>", "p" ],
-  //     "commands": [ "workbench.action.showAllEditorsByMostRecentlyUsed" ]
-  //   },
-  //   {
-  //     // toggle comment on current line / selected lines
-  //     "before": [ "g", "c", "c" ],
-  //     "commands": [ "editor.action.commentLine" ]
-  //   },
-  //   {
-  //     // toggle block comment, also with motions, like gc3j
-  //     "before": [ "g", "c" ],
-  //     "commands": [ "editor.action.blockComment" ]
-  //   },
-  //   {
-  //     "before": [ "<leader>", "c", "f" ],
-  //     "commands": [ "editor.action.formatDocument" ]
-  //   },
-  //   {
-  //     "before": [ "<leader>", "c", "d" ],
-  //     "commands": [ "editor.action.revealDefinitionAside" ]
-  //   },
-  //   {
-  //     // Goto next error
-  //     "before": [ "<leader>", "c", "e" ],
-  //     "commands": [ "editor.action.marker.next" ]
-  //   },
-  //   {
-  //     // Goto previous error
-  //     "before": [ "<leader>", "c", "p" ],
-  //     "commands": [ "editor.action.marker.prev" ]
-  //   },
-  //   {
-  //     // Switch between source and header file (supported only in C/C++ files)
-  //     "before": [ "<leader>", "a" ],
-  //     "commands": [ "C_Cpp.SwitchHeaderSource" ]
-  //   }
-  // ],
-  // "vim.insertModeKeyBindings": [
-  //   // Ctrl+H, Ctrl+J, Ctrl+K, Ctrl+L: navigation in insert mode similar to normal mode
-  //   // so that we don't have to use the arrow keys
-  //   {
-  //     "before": [ "<C-h>" ],
-  //     "after": [ "<left>" ]
-  //   },
-  //   {
-  //     "before": [ "<C-j>" ],
-  //     "after": [ "<down>" ]
-  //   },
-  //   {
-  //     "before": [ "<C-k>" ],
-  //     "after": [ "<up>" ]
-  //   },
-  //   {
-  //     "before": [ "<C-l>" ],
-  //     "after": [ "<right>" ]
-  //   }
-  // ],
-  // "vim.visualModeKeyBindingsNonRecursive": [
-  //   {
-  //     "before": [ "<leader>", "y" ],
-  //     "commands": [ "editor.action.clipboardCopyAction" ]
-  //   },
-  //   {
-  //     "before": [ "<leader>", "d" ],
-  //     "commands": [ "editor.action.clipboardCutAction"
-  //     ]
-  //   },
-  //   {
-  //     "before": [ "<leader>", "p" ],
-  //     "commands": [ "editor.action.clipboardPasteAction" ]
-  //   }
-  // ]
-}

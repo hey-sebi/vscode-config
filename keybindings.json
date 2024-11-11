@@ -70,30 +70,33 @@
   },
   {
     "command": "workbench.action.splitEditorRight",
-    "key": "ctrl+k 2"
+    "key": "space w v",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  {
-    "command": "-workbench.action.splitEditorRight",
-    "key": "ctrl+k ctrl+oem_5"
-  },
+  // {
+  //   "command": "-workbench.action.splitEditorRight",
+  //   //"key": "ctrl+k ctrl+oem_5"
+  //   "key": "ctrl+k ctrl+oem_5"
+  // },
   {
     "command": "workbench.action.splitEditorDown",
-    "key": "ctrl+k 3"
+    "key": "space w s",
+     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  {
-    "command": "-workbench.action.splitEditorDown",
-    "key": "ctrl+k ctrl+oem_5"
-  },
-  {
-    "command": "workbench.action.joinEditorInGroup",
-    "key": "ctrl+k 1",
-    "when": "sideBySideEditorActive"
-  },
-  {
-    "command": "-workbench.action.joinEditorInGroup",
-    "key": "ctrl+k ctrl+shift+oem_5",
-    "when": "sideBySideEditorActive"
-  },
+  // {
+  //   "command": "-workbench.action.splitEditorDown",
+  //   "key": "ctrl+k ctrl+oem_5"
+  // },
+  // {
+  //   "command": "workbench.action.joinEditorInGroup",
+  //   "key": "ctrl+k 1",
+  //   "when": "sideBySideEditorActive"
+  // },
+  // {
+  //   "command": "-workbench.action.joinEditorInGroup",
+  //   "key": "ctrl+k ctrl+shift+oem_5",
+  //   "when": "sideBySideEditorActive"
+  // },
   {
     "command": "workbench.action.joinAllGroups",
     "key": "ctrl+k 0"
@@ -126,6 +129,17 @@
     // Go to next entry in find-file or run command lists or similar
     "key": "ctrl+n",
     "when": "inQuickOpen"
+  },
+  // remap for CTRL-D (as the keybinding is also a VIM keybinding)
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
   },
   // -------------------------------------------------------------------------
   //                      VIM keybindings
@@ -281,7 +295,18 @@
   // search in all files (global full text search)
   {
     "command": "workbench.action.findInFiles",
-    "key": "space s g",
+    "key": "space s g", // "search globally"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  // search in current file
+  {
+    "key": "space s l", // "search locally (in current file)"
+    "command": "actions.find",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space r l", // "replace locally (in current file)"
+    "command": "editor.action.startFindReplaceAction",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   // open version control "goto git" panel
@@ -345,6 +370,7 @@
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
+    // TODO: key binding is wrong
     "args": {
       "commands": [
         "workbench.action.splitEditorDown",
@@ -383,5 +409,15 @@
     "command": "workbench.action.openRecent",
     "key": "space f r",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "shift+left",
+    "command": "workbench.action.moveEditorLeftInGroup",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+right",
+    "command": "workbench.action.moveEditorRightInGroup",
+    "when": "vim.mode == 'Normal'"
   }
 ]
