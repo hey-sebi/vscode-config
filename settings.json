@@ -218,7 +218,7 @@
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
 
-  "workbench.colorTheme": "ReUI",
+  "workbench.colorTheme": "ReUI II",
   "editor.tokenColorCustomizations": {
     // disable italic font
     "textMateRules": [
