@@ -182,7 +182,8 @@
   // VSCode VIM settings
   // -------------------------------------------------------------------
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
+    "vscodevim.vim": 1
   },
   "vim.leader": " ",
   "vim.useSystemClipboard": true,
