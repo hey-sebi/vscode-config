@@ -206,7 +206,8 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before":["ESC"],
+      // using only ESC here causes a conflict with e.g. cancel multi-cursor mode in vs code.
+      "before":["space ESC"],
       "commands": [
         {
           "command": ":nohl"
