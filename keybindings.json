@@ -251,9 +251,15 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    // Closes the current active tab (a bit like buffer-delete)
+    // Closes the current active tab (like "buffer-delete")
     "command": "workbench.action.closeActiveEditor",
     "key": "space b d",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    // Closes other tabs (other buffers)
+    "command": "workbench.action.closeOtherEditors",
+    "key": "space b o",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
@@ -393,9 +399,15 @@
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
   {
-    // go to last "buffer" i.e. most recently used editor tab
+    // go to previous "buffer" i.e. most recently used editor tab
     "command": "workbench.action.openPreviousRecentlyUsedEditor",
-    "key": "space b b",
+    "key": "space b p",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // go to next buffer, i.e. towards newerly used editor tab
+    "command": "workbench.action.openNextRecentlyUsedEditor",
+    "key": "space b n",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
