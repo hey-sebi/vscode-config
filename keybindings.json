@@ -81,7 +81,7 @@
   {
     "command": "workbench.action.splitEditorDown",
     "key": "space w s",
-     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   // {
   //   "command": "-workbench.action.splitEditorDown",
@@ -213,6 +213,12 @@
     "key": "shift-l",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
+  {
+    // when editor is in preview mode, tell it to (k)eep open
+    "command": "workbench.action.keepEditor",
+    "key": "space k",
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
+  },
   // ------------------------------------------
   // Coding
   // ------------------------------------------
@@ -263,6 +269,12 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
+    // Closes all tabs (all buffers)
+    "command": "workbench.action.closeAllEditors",
+    "key": "space b a",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
     // find-file: open file list in fuzzy finder
     "command": "workbench.action.quickOpen",
     "key": "space f f",
@@ -280,43 +292,44 @@
     "key": "space c g",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
   },
-  // alias for find-file
   {
+    // alias for find-file
     "command": "workbench.action.quickOpen",
     "key": "space space",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  // goto definition
   {
+    // goto definition
     "command": "editor.action.revealDefinition",
     "key": "space g d",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
-  // goto references
   {
+    // goto references
     "command": "editor.action.goToReferences",
     "key": "space g r",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
-  // search in all files (global full text search)
   {
+    // search in all files (global full text search)
     "command": "workbench.action.findInFiles",
     "key": "space s g", // "search globally"
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  // search in current file
   {
-    "key": "space s l", // "search locally (in current file)"
+    // search in current file
+    "key": "space s l",
     "command": "actions.find",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    "key": "space r l", // "replace locally (in current file)"
+    // replace in current file
+    "key": "space r l",
     "command": "editor.action.startFindReplaceAction",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  // open version control "goto git" panel
   {
+    // open version control "goto git" panel
     "args": {
       "commands": [
         "workbench.view.scm",

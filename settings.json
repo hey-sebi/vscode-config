@@ -14,7 +14,6 @@
   // Configure whether you receive automatic updates from an update channel. Requires a
   // restart after change.
   "update.mode": "default",
-  "breadcrumbs.enabled": false,
   "rewrap.wrappingColumn": 90,
   "terminal.integrated.scrollback": 10000,
   // Configure file associations to languages (e.g. "*.extension": "html"). These have
@@ -218,8 +217,6 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
-
-  "workbench.colorTheme": "ReUI II",
   "editor.tokenColorCustomizations": {
     // disable italic font
     "textMateRules": [
@@ -333,7 +330,15 @@
         }
       }
     ]
-  }
+  },
+  "workbench.colorTheme": "GitHub Dark",
+  "C_Cpp.codeFolding": "disabled",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.default.intelliSenseMode": "msvc-x86",
+  /// Reduce CPU load for intellisense parsing
+  "C_Cpp.workspaceParsingPriority": "high",
+  "C_Cpp.intelliSenseCachePath": "D:\\vscode_cache\\Microsoft\\vscode-cpptools"
 }
   // "vim.handleKeys": {
   //   "<C-c>": false,
