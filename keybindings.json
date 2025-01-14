@@ -275,9 +275,22 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    // find-file: open file list in fuzzy finder
+    // file -> find: Search file with fuzzy finder
     "command": "workbench.action.quickOpen",
     "key": "space f f",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // file -> open
+    "command": "workbench.action.files.openFile",
+    "key": "space f o",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // file -> recent
+    // open most recent files or workspaces in fuzzy finder
+    "command": "workbench.action.openRecent",
+    "key": "space f r",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
@@ -427,12 +440,6 @@
     // shows open editor tabs in fuzzy finder
     "command": "workbench.action.showAllEditors",
     "key": "space f b",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    // open most recent files or workspaces in fuzzy finder
-    "command": "workbench.action.openRecent",
-    "key": "space f r",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
