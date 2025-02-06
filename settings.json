@@ -14,6 +14,7 @@
   // Configure whether you receive automatic updates from an update channel. Requires a
   // restart after change.
   "update.mode": "default",
+  "zenMode.showTabs": "none",
   "rewrap.wrappingColumn": 90,
   "terminal.integrated.scrollback": 10000,
   // Configure file associations to languages (e.g. "*.extension": "html"). These have
@@ -117,7 +118,14 @@
   "editor.autoSurround": "never",
   "terminal.integrated.altClickMovesCursor": false,
   "search.exclude": {
-    "**/node_modules": false
+    "**/node_modules": false,
+    "**/__history": true,
+    "**/__recovery": true
+  },
+  "files.watcherExclude": {
+    "**/__recovery": true,
+    "**/__history": true,
+    "**/node_modules/*/**": false
   },
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
