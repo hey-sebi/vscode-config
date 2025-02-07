@@ -451,5 +451,51 @@
     "key": "shift+right",
     "command": "workbench.action.moveEditorRightInGroup",
     "when": "vim.mode == 'Normal'"
+  },
+  // Harpoon plugin bindings:
+  {
+    // harpoon -> add
+    "key": "space h a",
+    "command": "vscode-harpoon.addEditor",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    // harpoon -> edit
+    "key": "space h e",
+    "command": "vscode-harpoon.editEditors",
+     "when": "vim.mode == 'Normal'"
+  },
+  {
+    // harpoon -> find (analog to file find)
+    "key": "space h f",
+    "command": "vscode-harpoon.editorQuickPick",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    // harpoon -> previous
+    "key": "space h p",
+    "command": "vscode-harpoon.gotoPreviousHarpoonEditor",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    "key": "space 1",
+    "command": "vscode-harpoon.gotoEditor1",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    "key": "space 2",
+    "command": "vscode-harpoon.gotoEditor2",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    "key": "space 3",
+    "command": "vscode-harpoon.gotoEditor3",
+    "when": "vim.mode == 'Normal'"
+  },
+  {
+    "key": "space 4",
+    "command": "vscode-harpoon.gotoEditor4",
+    "when": "vim.mode == 'Normal'"
   }
+
 ]
