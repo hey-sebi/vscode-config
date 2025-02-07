@@ -69,20 +69,23 @@
     "key": "shift+alt+d"
   },
   {
+    // Mmnemonic: window -> split
+    "command": "workbench.action.splitEditorDown",
+    "key": "space w s",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Mmnemonic: window -> vertical split
     "command": "workbench.action.splitEditorRight",
     "key": "space w v",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+  // TODO: further split and group handling
   // {
   //   "command": "-workbench.action.splitEditorRight",
   //   //"key": "ctrl+k ctrl+oem_5"
   //   "key": "ctrl+k ctrl+oem_5"
   // },
-  {
-    "command": "workbench.action.splitEditorDown",
-    "key": "space w s",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
   // {
   //   "command": "-workbench.action.splitEditorDown",
   //   "key": "ctrl+k ctrl+oem_5"
@@ -97,53 +100,62 @@
   //   "key": "ctrl+k ctrl+shift+oem_5",
   //   "when": "sideBySideEditorActive"
   // },
+  // {
+  //   "command": "workbench.action.joinAllGroups",
+  //   "key": "ctrl+k 0"
+  // },
+  // {
+  //   "command": "workbench.action.focusNextGroup",
+  //   "key": "ctrl+k o",
+  //   "when": "editorFocus"
+  // },
   {
-    "command": "workbench.action.joinAllGroups",
-    "key": "ctrl+k 0"
-  },
-  {
-    "command": "workbench.action.focusNextGroup",
-    "key": "ctrl+k o",
-    "when": "editorFocus"
-  },
-  {
-    "command": "selectPrevSuggestion",
     // Go to previous entry in auto complete list
+    // Mnemonic: previous
+    // this keybinding is used widely among different tools
+    "command": "selectPrevSuggestion",
     "key": "ctrl+p",
     "when": "editorTextFocus && suggestWidgetVisible"
   },
   {
-    "command": "selectNextSuggestion",
     // Go to next entry in auto complete list
+    // Mnemonic: next
+    // this keybinding is used widely among different tools
+    "command": "selectNextSuggestion",
     "key": "ctrl+n",
     "when": "editorTextFocus && suggestWidgetVisible"
   },
   {
-    "command": "workbench.action.quickOpenSelectPrevious",
     // Go to previous entry in find-file or run command lists or similar
+    // Mnemonic: previous
+    // this keybinding is used widely among different tools
+    "command": "workbench.action.quickOpenSelectPrevious",
     "key": "ctrl+p",
     "when": "inQuickOpen"
   },
   {
-    "command": "workbench.action.quickOpenSelectNext",
     // Go to next entry in find-file or run command lists or similar
+    // Mnemonic: next
+    // this keybinding is used widely among different tools
+    "command": "workbench.action.quickOpenSelectNext",
     "key": "ctrl+n",
     "when": "inQuickOpen"
   },
-  // remap for CTRL-D (as the keybinding is also a VIM keybinding)
   {
+    // Multi-selection of identical words.
+    // We have to remove <CTRL-D> as this is also a VIM keybinding
     "key": "ctrl+d",
     "command": "-editor.action.addSelectionToNextFindMatch",
     "when": "editorFocus"
   },
   {
+    // Multi-selection of identical words.
+    // Note: Modifier keys come in handy here as they don't need to be
+    // pressed multiple times for repeated command execution.
     "key": "alt+d",
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "editorFocus"
   },
-  // -------------------------------------------------------------------------
-  //                      VIM keybindings
-  // -------------------------------------------------------------------------
   // Navigation
   {
     // Move one split (window) left
@@ -426,12 +438,14 @@
   },
   {
     // go to previous "buffer" i.e. most recently used editor tab
+    // Mmnemonic: buffer -> previous
     "command": "workbench.action.openPreviousRecentlyUsedEditor",
     "key": "space b p",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     // go to next buffer, i.e. towards newerly used editor tab
+    // Mmnemonic: buffer -> next
     "command": "workbench.action.openNextRecentlyUsedEditor",
     "key": "space b n",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
@@ -443,59 +457,75 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
+    // move tab to left (arrow key)
     "key": "shift+left",
     "command": "workbench.action.moveEditorLeftInGroup",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
+    // move tab to left (vim style)
+    // Mmnemonic: buffer -> h (hjkl)
+    "key": "space b h",
+    "command": "workbench.action.moveEditorLeftInGroup",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // move tab to right (arrow key)
     "key": "shift+right",
     "command": "workbench.action.moveEditorRightInGroup",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // move tab to right (vim style)
+    // Mmnemonic: buffer -> l (hjkl)
+    "key": "space b l",
+    "command": "workbench.action.moveEditorRightInGroup",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   // Harpoon plugin bindings:
   {
-    // harpoon -> add
+    // Mmnemonic: harpoon -> add
     "key": "space h a",
     "command": "vscode-harpoon.addEditor",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    // harpoon -> edit
+    // Mmnemonic: harpoon -> edit
     "key": "space h e",
     "command": "vscode-harpoon.editEditors",
-     "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    // harpoon -> find (analog to file find)
+    // Mmnemonic: harpoon -> find (analog to file find)
     "key": "space h f",
     "command": "vscode-harpoon.editorQuickPick",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    // harpoon -> previous
+    // Mmnemonic: harpoon -> previous
     "key": "space h p",
     "command": "vscode-harpoon.gotoPreviousHarpoonEditor",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space 1",
     "command": "vscode-harpoon.gotoEditor1",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space 2",
     "command": "vscode-harpoon.gotoEditor2",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space 3",
     "command": "vscode-harpoon.gotoEditor3",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space 4",
     "command": "vscode-harpoon.gotoEditor4",
-    "when": "vim.mode == 'Normal'"
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   }
 
 ]
