@@ -162,6 +162,8 @@
   ],
   "diffEditor.ignoreTrimWhitespace": false,
   "git.suggestSmartCommit": false,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": false,
   "editor.cursorSurroundingLines": 10,
   "extensions.ignoreRecommendations": true,
 
