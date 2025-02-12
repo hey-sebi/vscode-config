@@ -339,7 +339,7 @@
     // search in all files (global full text search)
     "command": "workbench.action.findInFiles",
     "key": "space s g", // "search globally"
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
   },
   {
     // search in current file
@@ -480,6 +480,14 @@
     // Mmnemonic: buffer -> l (hjkl)
     "key": "space b l",
     "command": "workbench.action.moveEditorRightInGroup",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Keep editor open (don't reuse this editor if new file is opened)
+    // Original keybinding: Ctrl+k Enter
+    // Mmnemonic: buffer -> ... (?)
+    "key": "space b enter",
+    "command": "workbench.action.keepEditor",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   // Harpoon plugin bindings:
