@@ -156,6 +156,8 @@
   // disable usage of italics
 
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // editor or panel
+  "terminal.integrated.defaultLocation": "editor",
   "grunt.autoDetect": "on",
   "workbench.settings.applyToAllProfiles": [
     "files.trimTrailingWhitespace"
