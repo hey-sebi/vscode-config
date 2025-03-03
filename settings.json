@@ -151,13 +151,11 @@
   "editor.semanticHighlighting.enabled": true,
   // prevent VSCode from modifying the terminal colors
   "terminal.integrated.minimumContrastRatio": 1,
-  // make the window's titlebar use the workbench colors
-  "window.titleBarStyle": "custom",
   // disable usage of italics
 
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  // editor or panel
-  "terminal.integrated.defaultLocation": "editor",
+  // editor or view
+  "terminal.integrated.defaultLocation": "view",
   "grunt.autoDetect": "on",
   "workbench.settings.applyToAllProfiles": [
     "files.trimTrailingWhitespace"
@@ -193,7 +191,6 @@
   // VSCode VIM settings
   // -------------------------------------------------------------------
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1,
     "vscodevim.vim": 1
   },
   "vim.leader": " ",
@@ -202,6 +199,31 @@
   "vim.ignorecase": true,
   "vim.smartcase": true,
   "vim.incsearch": true,
+
+  // Values for Github Dark:
+  // -------------------------------------------------------------------
+  // Background color of current search match
+  // "vim.searchMatchColor": "#008000",
+  // Background color of non-current search matches
+  // "vim.searchHighlightColor": "#754785",
+  // -------------------------------------------------------------------
+
+  // Values for Tokyo Night:
+  // -------------------------------------------------------------------
+  // Background color of current search match
+  "vim.searchMatchColor": "#0db9d7",
+  // match border for search highlighting to vim.searchMatchColor
+  "workbench.colorCustomizations": {
+    "editor.findMatchBorder": "#0db9d7"
+  },
+  // Foreground color of current search match
+  "vim.searchMatchTextColor": "#ffffff",
+  // Background color of non-current search matches
+  "vim.searchHighlightColor": "#754785",
+  // Foreground of non-current search matches
+  "vim.searchHighlightTextColor": "#ffffff",
+  // -------------------------------------------------------------------
+
   "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindings": [
     {
@@ -217,18 +239,25 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      // using only ESC here causes a conflict with e.g. cancel multi-cursor mode in vs code.
-      "before":["space ESC"],
-      "commands": [
-        {
-          "command": ":nohl"
-        }
-      ]
+      // call :nohl (no highlight)
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      // center screen after using C-u
+      "before": ["C-u"],
+      "after": ["C-u", "z", "z"]
+    },
+    {
+      // center screen after using C-d
+      "before": ["C-d"],
+      "after": ["C-d", "z", "z"]
     }
   ],
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
+  "vim.camelCaseMotion.enable" : true,
   "editor.tokenColorCustomizations": {
     // disable italic font
     "textMateRules": [
@@ -343,7 +372,15 @@
       }
     ]
   },
-  "workbench.colorTheme": "GitHub Dark",
+  // Themes that work for me:
+  // Github Dark, Gruvbox Material Dark, One Candy Dark
+  // Unsure: Tokyo Night Moon
+  "workbench.colorTheme": "Tokyo Night Moon",
+
+  // Values for Tokyo Night:
+  // make the window's titlebar use the workbench colors
+  "window.titleBarStyle": "custom",
+
   "C_Cpp.codeFolding": "disabled",
   "C_Cpp.default.cppStandard": "c++17",
   "C_Cpp.default.cStandard": "c17",
