@@ -11,12 +11,15 @@
   // "editor.fontFamily": "Meslo LGL Mono Nerd Font", //JetBrains Mono Nerd Font",
   "editor.fontFamily": "JetBrains Mono Nerd Font",
   "terminal.integrated.fontFamily": "Consolas",
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.autoReplies": {
+    "Terminate batch job (Y/N)": "Y\r"
+  },
   // Configure whether you receive automatic updates from an update channel. Requires a
   // restart after change.
   "update.mode": "default",
   "zenMode.showTabs": "none",
   "rewrap.wrappingColumn": 90,
-  "terminal.integrated.scrollback": 10000,
   // Configure file associations to languages (e.g. "*.extension": "html"). These have
   // precedence over the default associations of the languages installed.
   "files.associations": {
@@ -152,7 +155,6 @@
   // prevent VSCode from modifying the terminal colors
   "terminal.integrated.minimumContrastRatio": 1,
   // disable usage of italics
-
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   // editor or view
   "terminal.integrated.defaultLocation": "view",
@@ -166,7 +168,6 @@
   "git.blame.statusBarItem.enabled": false,
   "editor.cursorSurroundingLines": 10,
   "extensions.ignoreRecommendations": true,
-
   // -------------------------------------------------------------------
   // Doxygen settings
   // -------------------------------------------------------------------
@@ -182,11 +183,9 @@
     "workbench.action.tasks.runTask"
   ],
   "cmake.showOptionsMovedNotification": false,
-
   "remote.SSH.remotePlatform": {
     "mlr-lb-161": "linux"
   },
-
   // -------------------------------------------------------------------
   // VSCode VIM settings
   // -------------------------------------------------------------------
@@ -199,7 +198,6 @@
   "vim.ignorecase": true,
   "vim.smartcase": true,
   "vim.incsearch": true,
-
   // Values for Github Dark:
   // -------------------------------------------------------------------
   // Background color of current search match
@@ -207,8 +205,22 @@
   // Background color of non-current search matches
   // "vim.searchHighlightColor": "#754785",
   // -------------------------------------------------------------------
-
   // Values for Tokyo Night:
+  // -------------------------------------------------------------------
+  // // Background color of current search match
+  // "vim.searchMatchColor": "#0db9d7",
+  // // match border for search highlighting to vim.searchMatchColor
+  // "workbench.colorCustomizations": {
+  //   "editor.findMatchBorder": "#0db9d7"
+  // },
+  // // Foreground color of current search match
+  // "vim.searchMatchTextColor": "#ffffff",
+  // // Background color of non-current search matches
+  // "vim.searchHighlightColor": "#754785",
+  // // Foreground of non-current search matches
+  // "vim.searchHighlightTextColor": "#ffffff",
+  // -------------------------------------------------------------------
+  // Values for Cattppuccin Macchiato:
   // -------------------------------------------------------------------
   // Background color of current search match
   "vim.searchMatchColor": "#0db9d7",
@@ -217,181 +229,214 @@
     "editor.findMatchBorder": "#0db9d7"
   },
   // Foreground color of current search match
-  "vim.searchMatchTextColor": "#ffffff",
+  "vim.searchMatchTextColor": "white",
   // Background color of non-current search matches
   "vim.searchHighlightColor": "#754785",
   // Foreground of non-current search matches
   "vim.searchHighlightTextColor": "#ffffff",
   // -------------------------------------------------------------------
-
   "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindings": [
     {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before" : ["u"],
-      "commands" : [ "undo" ]
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
     },
     {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before" : ["<C-r>"],
-      "commands" : [ "redo" ]
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       // call :nohl (no highlight)
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
+      "before": [
+        "<space> n"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
       // center screen after using C-u
-      "before": ["C-u"],
-      "after": ["C-u", "z", "z"]
+      "before": [
+        "C-u"
+      ],
+      "after": [
+        "C-u",
+        "z",
+        "z"
+      ]
     },
     {
       // center screen after using C-d
-      "before": ["C-d"],
-      "after": ["C-d", "z", "z"]
+      "before": [
+        "C-d"
+      ],
+      "after": [
+        "C-d",
+        "z",
+        "z"
+      ]
     }
   ],
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 250,
-  "vim.camelCaseMotion.enable" : true,
-  "editor.tokenColorCustomizations": {
-    // disable italic font
-    "textMateRules": [
-      {
-        "scope": [
-          "comment",
-          "comment.block",
-          "comment.block.documentation",
-          "comment.line",
-          "constant",
-          "constant.character",
-          "constant.character.escape",
-          "constant.numeric",
-          "constant.numeric.integer",
-          "constant.numeric.float",
-          "constant.numeric.hex",
-          "constant.numeric.octal",
-          "constant.other",
-          "constant.regexp",
-          "constant.rgb-value",
-          "emphasis",
-          "entity",
-          "entity.name",
-          "entity.name.class",
-          "entity.name.function",
-          "entity.name.method",
-          "entity.name.section",
-          "entity.name.selector",
-          "entity.name.tag",
-          "entity.name.type",
-          "entity.other",
-          "entity.other.attribute-name",
-          "entity.other.inherited-class",
-          "invalid",
-          "invalid.deprecated",
-          "invalid.illegal",
-          "keyword",
-          "keyword.control",
-          "keyword.operator",
-          "keyword.operator.new",
-          "keyword.operator.assignment",
-          "keyword.operator.arithmetic",
-          "keyword.operator.logical",
-          "keyword.other",
-          "markup",
-          "markup.bold",
-          "markup.changed",
-          "markup.deleted",
-          "markup.heading",
-          "markup.inline.raw",
-          "markup.inserted",
-          "markup.italic",
-          "markup.list",
-          "markup.list.numbered",
-          "markup.list.unnumbered",
-          "markup.other",
-          "markup.quote",
-          "markup.raw",
-          "markup.underline",
-          "markup.underline.link",
-          "meta",
-          "meta.block",
-          "meta.cast",
-          "meta.class",
-          "meta.function",
-          "meta.function-call",
-          "meta.preprocessor",
-          "meta.return-type",
-          "meta.selector",
-          "meta.tag",
-          "meta.type.annotation",
-          "meta.type",
-          "punctuation.definition.string.begin",
-          "punctuation.definition.string.end",
-          "punctuation.separator",
-          "punctuation.separator.continuation",
-          "punctuation.terminator",
-          "storage",
-          "storage.modifier",
-          "storage.type",
-          "string",
-          "string.interpolated",
-          "string.other",
-          "string.quoted",
-          "string.quoted.double",
-          "string.quoted.other",
-          "string.quoted.single",
-          "string.quoted.triple",
-          "string.regexp",
-          "string.unquoted",
-          "strong",
-          "support",
-          "support.class",
-          "support.constant",
-          "support.function",
-          "support.other",
-          "support.type",
-          "support.type.property-name",
-          "support.variable",
-          "variable",
-          "variable.language",
-          "variable.name",
-          "variable.other",
-          "variable.other.readwrite",
-          "variable.parameter",
-          "storage.type.ts",
-          "keyword.control.flow.ts"
-        ],
-        "settings": {
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
+  "vim.camelCaseMotion.enable": true,
+  // the following block is not needed for Catppuccin Themes as they provide controls for that
+  // "editor.tokenColorCustomizations": {
+  //   // disable italic font
+  //   "textMateRules": [
+  //     {
+  //       "scope": [
+  //         "comment",
+  //         "comment.block",
+  //         "comment.block.documentation",
+  //         "comment.line",
+  //         "constant",
+  //         "constant.character",
+  //         "constant.character.escape",
+  //         "constant.numeric",
+  //         "constant.numeric.integer",
+  //         "constant.numeric.float",
+  //         "constant.numeric.hex",
+  //         "constant.numeric.octal",
+  //         "constant.other",
+  //         "constant.regexp",
+  //         "constant.rgb-value",
+  //         "emphasis",
+  //         "entity",
+  //         "entity.name",
+  //         "entity.name.class",
+  //         "entity.name.function",
+  //         "entity.name.method",
+  //         "entity.name.section",
+  //         "entity.name.selector",
+  //         "entity.name.tag",
+  //         "entity.name.type",
+  //         "entity.other",
+  //         "entity.other.attribute-name",
+  //         "entity.other.inherited-class",
+  //         "invalid",
+  //         "invalid.deprecated",
+  //         "invalid.illegal",
+  //         "keyword",
+  //         "keyword.control",
+  //         "keyword.operator",
+  //         "keyword.operator.new",
+  //         "keyword.operator.assignment",
+  //         "keyword.operator.arithmetic",
+  //         "keyword.operator.logical",
+  //         "keyword.other",
+  //         "markup",
+  //         "markup.bold",
+  //         "markup.changed",
+  //         "markup.deleted",
+  //         "markup.heading",
+  //         "markup.inline.raw",
+  //         "markup.inserted",
+  //         "markup.italic",
+  //         "markup.list",
+  //         "markup.list.numbered",
+  //         "markup.list.unnumbered",
+  //         "markup.other",
+  //         "markup.quote",
+  //         "markup.raw",
+  //         "markup.underline",
+  //         "markup.underline.link",
+  //         "meta",
+  //         "meta.block",
+  //         "meta.cast",
+  //         "meta.class",
+  //         "meta.function",
+  //         "meta.function-call",
+  //         "meta.preprocessor",
+  //         "meta.return-type",
+  //         "meta.selector",
+  //         "meta.tag",
+  //         "meta.type.annotation",
+  //         "meta.type",
+  //         "punctuation.definition.string.begin",
+  //         "punctuation.definition.string.end",
+  //         "punctuation.separator",
+  //         "punctuation.separator.continuation",
+  //         "punctuation.terminator",
+  //         "storage",
+  //         "storage.modifier",
+  //         "storage.type",
+  //         "string",
+  //         "string.interpolated",
+  //         "string.other",
+  //         "string.quoted",
+  //         "string.quoted.double",
+  //         "string.quoted.other",
+  //         "string.quoted.single",
+  //         "string.quoted.triple",
+  //         "string.regexp",
+  //         "string.unquoted",
+  //         "strong",
+  //         "support",
+  //         "support.class",
+  //         "support.constant",
+  //         "support.function",
+  //         "support.other",
+  //         "support.type",
+  //         "support.type.property-name",
+  //         "support.variable",
+  //         "variable",
+  //         "variable.language",
+  //         "variable.name",
+  //         "variable.other",
+  //         "variable.other.readwrite",
+  //         "variable.parameter",
+  //         "storage.type.ts",
+  //         "keyword.control.flow.ts"
+  //       ],
+  //       "settings": {
+  //         "fontStyle": ""
+  //       }
+  //     }
+  //   ]
+  // },
   // Themes that work for me:
   // Github Dark, Gruvbox Material Dark, One Candy Dark
-  // Unsure: Tokyo Night Moon
-  "workbench.colorTheme": "Tokyo Night Moon",
-
-  // Values for Tokyo Night:
+  // Unsure: Tokyo Night Moon (comments, line numbers etc rather dark)
+  // Unsure: Catppuccin Macchiato
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  // -------------------------------------------------------------
+  // Settings specifically for Catppucin themes
+  // -------------------------------------------------------------
+  "catppuccin.accentColor": "mauve",
+  "catppuccin.bracketMode": "neovim",
+  "catppuccin.italicKeywords": false,
+  "catppuccin.italicComments": false,
+  "catppuccin.boldKeywords": true,
+  "catppuccin.colorOverrides": {
+    "macchiato": {
+      // this color was taken from wezterm catppucin as it's a bit smoother
+      "base": "#24273a",
+      "mantle": "#24273a",
+      "crust": "#24273a",
+    },
+  },
+  // -------------------------------------------------------------
   // make the window's titlebar use the workbench colors
   "window.titleBarStyle": "custom",
-
   "C_Cpp.codeFolding": "disabled",
   "C_Cpp.default.cppStandard": "c++17",
   "C_Cpp.default.cStandard": "c17",
   "C_Cpp.default.intelliSenseMode": "msvc-x86",
-  /// Reduce CPU load for intellisense parsing
+  /// Control CPU load for intellisense parsing
   "C_Cpp.workspaceParsingPriority": "high",
   "C_Cpp.intelliSenseCachePath": "D:\\vscode_cache\\Microsoft\\vscode-cpptools"
 }
-  // "vim.handleKeys": {
-  //   "<C-c>": false,
-  //   "<C-v>": false,
-  //   "<C-x>": false,
-  //   "<C-a>": false,
-  //   "<C-f>": false

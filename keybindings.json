@@ -62,6 +62,13 @@
     "key": "ctrl+k v",
     "when": "!terminalFocus"
   },
+  // {
+  //   // Hides the terminal without focussing it
+  //   // Mnemonic: terminal -> hide
+  //   "command": "workbench.action.terminal.toggleTerminal",
+  //   "key": "space t h",
+  //   "when": "(activeViewlet != 'workbench.view.terminal') && (vim.mode == 'Normal' || vim.mode == 'Visual')"
+  // },
   {
     "command": "workbench.action.tasks.reRunTask",
     "key": "ctrl+f9"
