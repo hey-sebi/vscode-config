@@ -194,12 +194,88 @@
     "command": "workbench.action.navigateRight",
     "key": "ctrl-l"
   },
+  // ==================================================================================
+  //   VIM keybindings, inspired by LazyVim
+  // ==================================================================================
+
+  // ----------------------------------------------------------------------------------
+  //   Working with (b)uffers. We handle buffers = tabs = editors in VSCode
+  // ----------------------------------------------------------------------------------
   {
-    // Show tab names in fuzzy finder list
+    // Closes the currently active buffer/tab
+    // Mnemonic: buffer delete
+    "command": "workbench.action.closeActiveEditor",
+    "key": "space b d",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    // Closes all except the currently active buffer/tab
+    // Mnemonic: buffer delete (with Shift modifier for *others*)
+    "command": "workbench.action.closeOtherEditors",
+    "key": "space b shift+D",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    // Closes all buffers/tabs
+    // Mnemonic: buffer (delete) all
+    "command": "workbench.action.closeAllEditors",
+    "key": "space b a",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+
+  {
+    // Closes all buffers/tabs
+    // Mnemonic: buffer (delete to the) left
+    "command": "workbench.action.closeEditorsToTheLeft",
+    "key": "space b l",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    // Closes all buffers/tabs
+    // Mnemonic: buffer (delete to the) right
+    "command": "workbench.action.closeEditorsToTheRight",
+    "key": "space b r",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+
+  // TODO: the following 3 are duplicates
+  {
+    // Show open buffers names in fuzzy finder list.
+    // Identical to <space> <space>
     "command": "workbench.action.showAllEditors",
     "key": "space ,",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+  {
+    // Show open buffers names in fuzzy finder list.
+    // Identical to <space> ,
+    "command": "workbench.action.showAllEditors",
+    "key": "space space",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // shows open buffers/editor tabs in fuzzy finder
+    // Mmnemonic: buffer -> find
+    "command": "workbench.action.showAllEditors",
+    "key": "space b f",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // move buffer/tab to left
+    "key": "shift+left",
+    "command": "workbench.action.moveEditorLeftInGroup",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // move buffer/tab to right
+    "key": "shift+right",
+    "command": "workbench.action.moveEditorRightInGroup",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+
+  // ----------------------------------------------------------------------------------
+  //   Working with the file (e)xplorer.
+  // ----------------------------------------------------------------------------------
   {
     // Show sidebar and focus file explorer -- when not already in sidebar
     "args": {
@@ -280,33 +356,6 @@
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    // Allows selection of a symbol of current file in fuzzy finder in order to jump to it
-    "command": "workbench.action.gotoSymbol",
-    "key": "space c s",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    // Closes the currently active buffer/tab
-    // Mnemonic: buffer delete
-    "command": "workbench.action.closeActiveEditor",
-    "key": "space b d",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    // Closes all except the currently active buffer/tab
-    // Mnemonic: buffer delete (with Shift modifier for *others*)
-    "command": "workbench.action.closeOtherEditors",
-    "key": "space b shift+o",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
-    // Closes all buffers/tabs
-    // Mnemonic: buffer (delete) all
-    "command": "workbench.action.closeAllEditors",
-    "key": "space b a",
-    "when": "vim.mode == 'Normal' && editorTextFocus"
-  },
-  {
     // Search file with fuzzy finder
     // Mmnemonic: file -> find
     "command": "workbench.action.quickOpen",
@@ -356,20 +405,15 @@
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
   },
   {
-    // alias for find-file
-    "command": "workbench.action.quickOpen",
-    "key": "space space",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    // Jump
-    // goto definition
+    // Reveal the definiton of a symbol (LSP)
+    // Mnemonic: goto definition
     "command": "editor.action.revealDefinition",
     "key": "space g d",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
-    // goto references
+    // Reveal the references for a symbol (LSP)
+    // Mnemonic: goto references
     "command": "editor.action.goToReferences",
     "key": "space g r",
     "when": "vim.mode == 'Normal' && editorTextFocus"
@@ -385,6 +429,21 @@
     // search in current file
     "key": "space s l",
     "command": "actions.find",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+
+  {
+    // Search symbol in buffer (LSP action)
+    // Mnemonic: search -> symbol
+    "command": "workbench.action.gotoSymbol",
+    "key": "space s s",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    // Search symbol in workspace (LSP action)
+    // Mnemonic: search -> symbol (with shift modifier for workspace)
+    "key": "space s shift+s",
+    "command": "workbench.action.showAllSymbols",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
@@ -491,38 +550,6 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    // shows open editor tabs in fuzzy finder
-    "command": "workbench.action.showAllEditors",
-    "key": "space f b",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    // move tab to left (arrow key)
-    "key": "shift+left",
-    "command": "workbench.action.moveEditorLeftInGroup",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    // move tab to left (vim style)
-    // Mmnemonic: buffer -> h (hjkl)
-    "key": "space b h",
-    "command": "workbench.action.moveEditorLeftInGroup",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    // move tab to right (arrow key)
-    "key": "shift+right",
-    "command": "workbench.action.moveEditorRightInGroup",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
-    // move tab to right (vim style)
-    // Mmnemonic: buffer -> l (hjkl)
-    "key": "space b l",
-    "command": "workbench.action.moveEditorRightInGroup",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
-  {
     // Keep editor open (don't reuse this editor if new file is opened)
     // Original keybinding: Ctrl+k Enter
     // Mmnemonic: buffer -> ... (?)
@@ -530,7 +557,10 @@
     "command": "workbench.action.keepEditor",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+
+  // ----------------------------------------------------------------------------------
   // Harpoon plugin bindings:
+  // ----------------------------------------------------------------------------------
   {
     // Mmnemonic: harpoon -> add
     "key": "space h a",
@@ -574,6 +604,38 @@
     "key": "space 4",
     "command": "vscode-harpoon.gotoEditor4",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  // ----------------------------------------------------------------------------------
+  // Bookmark plugin bindings:
+  // ----------------------------------------------------------------------------------
+  {
+    // Mnemonic: book(m)ark toggle
+    "key": "space m t",
+    "command": "bookmarks.toggle",
+    "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Mnemonic: book(m)ark toggle named/labeled
+    "key": "space m shift+t",
+    "command": "bookmarks.toggleLabeled",
+    "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Mnemonic: book(m)ark next (based on hjkl)
+    "key": "space m l",
+    "command": "bookmarks.jumpToNext",
+    "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Mnemonic: book(m)ark previous (based on hjkl)
+    "key": "space m h",
+    "command": "bookmarks.jumpToPrevious",
+    "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Mnemonic: book(m)ark show
+    "key": "space m s",
+    "command": "bookmarks.listFromAllFiles",
+    "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
   }
-
 ]
