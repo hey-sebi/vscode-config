@@ -151,6 +151,7 @@
   "explorer.autoRevealExclude": {
     "**/node_modules": false
   },
+  "explorer.confirmDelete": false,
   "editor.semanticHighlighting.enabled": true,
   // prevent VSCode from modifying the terminal colors
   "terminal.integrated.minimumContrastRatio": 1,
@@ -222,12 +223,18 @@
   // -------------------------------------------------------------------
   // Values for Cattppuccin Macchiato:
   // -------------------------------------------------------------------
+  "workbench.colorCustomizations": {
+    // match border for earch highlighting to vim.searchMatchColor
+    "editor.findMatchBorder": "#0db9d7",
+    "editor.findMatchBackground": "#0db9d7",
+    "editor.findMatchForeground": "#ffffff",
+
+    // Match to vim.searchMatchTextColor
+    "editor.findMatchHighlightBackground": "#754785",
+    "editor.findMatchHighlightForeground": "#ffffff",
+  },
   // Background color of current search match
   "vim.searchMatchColor": "#0db9d7",
-  // match border for search highlighting to vim.searchMatchColor
-  "workbench.colorCustomizations": {
-    "editor.findMatchBorder": "#0db9d7"
-  },
   // Foreground color of current search match
   "vim.searchMatchTextColor": "white",
   // Background color of non-current search matches
@@ -429,6 +436,11 @@
       "crust": "#24273a",
     },
   },
+  // "catppuccin.customUIColors": {
+  //   "macchiato": {
+  //     "statusBar.foreground": "accent",
+  //   },
+  // },
   // -------------------------------------------------------------
   // make the window's titlebar use the workbench colors
   "window.titleBarStyle": "custom",
@@ -438,5 +450,6 @@
   "C_Cpp.default.intelliSenseMode": "msvc-x86",
   /// Control CPU load for intellisense parsing
   "C_Cpp.workspaceParsingPriority": "high",
-  "C_Cpp.intelliSenseCachePath": "D:\\vscode_cache\\Microsoft\\vscode-cpptools"
+  "C_Cpp.intelliSenseCachePath": "D:\\vscode_cache\\Microsoft\\vscode-cpptools",
+  "workbench.activityBar.location": "top",
 }
