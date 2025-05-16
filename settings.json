@@ -126,9 +126,10 @@
     "**/__recovery": true
   },
   "files.watcherExclude": {
-    "**/__recovery": true,
     "**/__history": true,
-    "**/node_modules/*/**": false
+    "**/__recovery": true,
+    "**/node_modules/*/**": false,
+    "install/**": true
   },
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -149,7 +150,8 @@
   },
   "editor.accessibilitySupport": "off",
   "explorer.autoRevealExclude": {
-    "**/node_modules": false
+    "**/node_modules": false,
+    "install/**": true
   },
   "explorer.confirmDelete": false,
   "editor.semanticHighlighting.enabled": true,
@@ -193,7 +195,7 @@
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
-  "vim.leader": " ",
+  "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.ignorecase": true,
@@ -244,181 +246,76 @@
   // -------------------------------------------------------------------
   "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindings": [
+    // {
+    //   // call :nohl (no highlight)
+    //   "before": [" ", "n" ],
+    //   "commands": [ ":nohl" ]
+    // },
     {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before": [
-        "u"
-      ],
-      "commands": [
-        "undo"
-      ]
+      "before": [ "u" ],
+      "commands": [ "undo" ]
     },
     {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before": [
-        "<C-r>"
-      ],
-      "commands": [
-        "redo"
-      ]
+      "before": [ "<C-r>" ],
+      "commands": [ "redo" ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      // call :nohl (no highlight)
-      "before": [
-        "<space> n"
-      ],
-      "commands": [
-        ":nohl"
-      ]
-    },
-    {
       // center screen after using C-u
-      "before": [
-        "C-u"
-      ],
-      "after": [
-        "C-u",
-        "z",
-        "z"
-      ]
+      "before": [ "C-u" ],
+      "after": [ "C-u", "z", "z" ]
     },
     {
       // center screen after using C-d
-      "before": [
-        "C-d"
-      ],
-      "after": [
-        "C-d",
-        "z",
-        "z"
-      ]
-    }
+      "before": [ "C-d" ],
+      "after": [ "C-d", "z", "z" ]
+    },
+
+    // Pasting without overwriting the paste buffer
+    // {
+    //   "before": [" ", "p"],
+    //   "after": ["\"", "_", "d", "P"]
+    // },
+    // {
+    //   "before": [" ", "P"],
+    //   "after": ["\"", "_", "d", "p"]
+    // },
+    // {
+    //   "before": [" ", "g", "p"],
+    //   "after": ["\"", "_", "d", "g", "P"]
+    // },
+    // {
+    //   "before": [" ", "g", "P"],
+    //   "after": ["\"", "_", "d", "g", "p"]
+    // }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Pasting without overwriting the paste buffer
+    // {
+    //   "before": [" ", "p"],
+    //   "after": ["\"", "_", "d", "P"]
+    // },
+    // {
+    //   "before": [" ", "P"],
+    //   "after": ["\"", "_", "d", "p"]
+    // },
+    // {
+    //   "before": [" ", "g", "p"],
+    //   "after": ["\"", "_", "d", "g", "P"]
+    // },
+    // {
+    //   "before": [" ", "g", "P"],
+    //   "after": ["\"", "_", "d", "g", "p"]
+    // }
   ],
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#a9dc7660",
-  "vim.highlightedyank.duration": 250,
+  "vim.highlightedyank.duration": 350,
   "vim.camelCaseMotion.enable": true,
-  // the following block is not needed for Catppuccin Themes as they provide controls for that
-  // "editor.tokenColorCustomizations": {
-  //   // disable italic font
-  //   "textMateRules": [
-  //     {
-  //       "scope": [
-  //         "comment",
-  //         "comment.block",
-  //         "comment.block.documentation",
-  //         "comment.line",
-  //         "constant",
-  //         "constant.character",
-  //         "constant.character.escape",
-  //         "constant.numeric",
-  //         "constant.numeric.integer",
-  //         "constant.numeric.float",
-  //         "constant.numeric.hex",
-  //         "constant.numeric.octal",
-  //         "constant.other",
-  //         "constant.regexp",
-  //         "constant.rgb-value",
-  //         "emphasis",
-  //         "entity",
-  //         "entity.name",
-  //         "entity.name.class",
-  //         "entity.name.function",
-  //         "entity.name.method",
-  //         "entity.name.section",
-  //         "entity.name.selector",
-  //         "entity.name.tag",
-  //         "entity.name.type",
-  //         "entity.other",
-  //         "entity.other.attribute-name",
-  //         "entity.other.inherited-class",
-  //         "invalid",
-  //         "invalid.deprecated",
-  //         "invalid.illegal",
-  //         "keyword",
-  //         "keyword.control",
-  //         "keyword.operator",
-  //         "keyword.operator.new",
-  //         "keyword.operator.assignment",
-  //         "keyword.operator.arithmetic",
-  //         "keyword.operator.logical",
-  //         "keyword.other",
-  //         "markup",
-  //         "markup.bold",
-  //         "markup.changed",
-  //         "markup.deleted",
-  //         "markup.heading",
-  //         "markup.inline.raw",
-  //         "markup.inserted",
-  //         "markup.italic",
-  //         "markup.list",
-  //         "markup.list.numbered",
-  //         "markup.list.unnumbered",
-  //         "markup.other",
-  //         "markup.quote",
-  //         "markup.raw",
-  //         "markup.underline",
-  //         "markup.underline.link",
-  //         "meta",
-  //         "meta.block",
-  //         "meta.cast",
-  //         "meta.class",
-  //         "meta.function",
-  //         "meta.function-call",
-  //         "meta.preprocessor",
-  //         "meta.return-type",
-  //         "meta.selector",
-  //         "meta.tag",
-  //         "meta.type.annotation",
-  //         "meta.type",
-  //         "punctuation.definition.string.begin",
-  //         "punctuation.definition.string.end",
-  //         "punctuation.separator",
-  //         "punctuation.separator.continuation",
-  //         "punctuation.terminator",
-  //         "storage",
-  //         "storage.modifier",
-  //         "storage.type",
-  //         "string",
-  //         "string.interpolated",
-  //         "string.other",
-  //         "string.quoted",
-  //         "string.quoted.double",
-  //         "string.quoted.other",
-  //         "string.quoted.single",
-  //         "string.quoted.triple",
-  //         "string.regexp",
-  //         "string.unquoted",
-  //         "strong",
-  //         "support",
-  //         "support.class",
-  //         "support.constant",
-  //         "support.function",
-  //         "support.other",
-  //         "support.type",
-  //         "support.type.property-name",
-  //         "support.variable",
-  //         "variable",
-  //         "variable.language",
-  //         "variable.name",
-  //         "variable.other",
-  //         "variable.other.readwrite",
-  //         "variable.parameter",
-  //         "storage.type.ts",
-  //         "keyword.control.flow.ts"
-  //       ],
-  //       "settings": {
-  //         "fontStyle": ""
-  //       }
-  //     }
-  //   ]
-  // },
-  // Themes that work for me:
-  // Github Dark, Gruvbox Material Dark, One Candy Dark
-  // Unsure: Tokyo Night Moon (comments, line numbers etc rather dark)
-  // Unsure: Catppuccin Macchiato
+
   "workbench.colorTheme": "Catppuccin Macchiato",
   // -------------------------------------------------------------
   // Settings specifically for Catppucin themes
@@ -436,17 +333,11 @@
       "crust": "#24273a",
     },
   },
-  // "catppuccin.customUIColors": {
-  //   "macchiato": {
-  //     "statusBar.foreground": "accent",
-  //   },
-  // },
   // -------------------------------------------------------------
+
   // make the window's titlebar use the workbench colors
   "window.titleBarStyle": "custom",
   "C_Cpp.codeFolding": "disabled",
-  "C_Cpp.default.cppStandard": "c++17",
-  "C_Cpp.default.cStandard": "c17",
   "C_Cpp.default.intelliSenseMode": "msvc-x86",
   /// Control CPU load for intellisense parsing
   "C_Cpp.workspaceParsingPriority": "high",
