@@ -376,6 +376,14 @@
     "key": "space f r",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+
+  {
+    // Open new file (unsaved, untitled, default language/txt)
+    // Mnemonic: file -> new
+    "command": "workbench.action.files.newUntitledFile",
+    "key": "space f n",
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
+  },
   {
     // Saves the current file
     // Mnemonic: file -> save
@@ -429,7 +437,7 @@
     // search in current file
     "key": "space s l",
     "command": "actions.find",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
   },
 
   {
@@ -450,7 +458,7 @@
     // replace in current file
     "key": "space r l",
     "command": "editor.action.startFindReplaceAction",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
   },
   {
     // open version control "goto git" panel
@@ -574,7 +582,7 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    // Mmnemonic: harpoon -> find (analog to file find)
+    // Mmnemonic: harpoon -> find (analog to find file)
     "key": "space h f",
     "command": "vscode-harpoon.editorQuickPick",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
