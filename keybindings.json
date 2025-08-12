@@ -274,7 +274,7 @@
   },
 
   // ----------------------------------------------------------------------------------
-  //   Working with the file (e)xplorer.
+  //   Working with the file (e)xplorer / sidebar
   // ----------------------------------------------------------------------------------
   {
     // Show sidebar and focus file explorer -- when not already in sidebar
@@ -288,23 +288,40 @@
     "key": "space e",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
   },
+  // {
+  //   // Hide explorer sidebar and focus editor -- when already in sidebar
+  //   "args": {
+  //     "commands": [
+  //       "workbench.action.toggleSidebarVisibility",
+  //       "workbench.action.focusActiveEditorGroup"
+  //     ]
+  //   },
+  //   "command": "runCommands",
+  //   "key": "space e",
+  //   "when": "vim.mode != 'Disabled' && sideBarFocus && !inputFocus"
+  // },
   {
-    // Hide sidebar and focus editor -- when already in sidebar
+    // open version control "goto git" panel
     "args": {
       "commands": [
-        "workbench.action.toggleSidebarVisibility",
-        "workbench.action.focusActiveEditorGroup"
+        "workbench.view.scm",
+        "workbench.scm.focus"
       ]
     },
     "command": "runCommands",
-    "key": "space e",
-    "when": "vim.mode != 'Disabled' && sideBarFocus && !inputFocus"
+    "key": "space g g",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+  // {
+  //   // Hide sidebar and focus editor -- when sidebar already visible and in editor
+  //   "command": "workbench.action.toggleSidebarVisibility",
+  //   "key": "space e",
+  //   "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible"
+  // },
   {
-    // Hide sidebar and focus editor -- when sidebar already visible and in editor
+   // Toggle sidebar visibility
+    "key": "ctrl+shift+-",
     "command": "workbench.action.toggleSidebarVisibility",
-    "key": "space e",
-    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible"
   },
   {
     // Focus tab to the left (in same group / split)
@@ -459,18 +476,6 @@
     "key": "space r l",
     "command": "editor.action.startFindReplaceAction",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
-  },
-  {
-    // open version control "goto git" panel
-    "args": {
-      "commands": [
-        "workbench.view.scm",
-        "workbench.scm.focus"
-      ]
-    },
-    "command": "runCommands",
-    "key": "space g g",
-    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "command": "editor.action.addSelectionToNextFindMatch",

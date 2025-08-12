@@ -315,8 +315,6 @@
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 350,
   "vim.camelCaseMotion.enable": true,
-
-  "workbench.colorTheme": "Catppuccin Macchiato",
   // -------------------------------------------------------------
   // Settings specifically for Catppucin themes
   // -------------------------------------------------------------
@@ -343,4 +341,18 @@
   "C_Cpp.workspaceParsingPriority": "high",
   "C_Cpp.intelliSenseCachePath": "D:\\vscode_cache\\Microsoft\\vscode-cpptools",
   "workbench.activityBar.location": "top",
+  "codeium.enableConfig": {
+    "*": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "jsonc": false
+  },
+  "workbench.colorTheme": "Catppuccin Macchiato",
 }
