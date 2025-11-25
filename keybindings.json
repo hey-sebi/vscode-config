@@ -347,12 +347,12 @@
   {
     "key": "shift-j",
     "command": "editor.action.moveLinesDownAction",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && editorTextFocus"
+    "when": "(vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && editorTextFocus"
   },
   {
     "key": "shift-k",
     "command": "editor.action.moveLinesUpAction",
-    "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && editorTextFocus"
+    "when": "(vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && editorTextFocus"
   },
   {
     // Show the tooltip for the symbol under the cursor
@@ -472,8 +472,8 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    // replace in current file
-    "key": "space r l",
+    // replace in current file: like search in current file but with capital 'L'
+    "key": "space s shift+l",
     "command": "editor.action.startFindReplaceAction",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
   },
@@ -649,6 +649,18 @@
     // Mnemonic: book(m)ark show
     "key": "space m s",
     "command": "bookmarks.listFromAllFiles",
+    "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Mnemonic: book(m)arks clear
+    "key": "space m c",
+    "command": "bookmarks.clear",
+    "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
+  },
+  {
+    // Mnemonic: book(m)arks Clear (globally)
+    "key": "space m C",
+    "command": "bookmarks.clearFromAllFiles",
     "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
   }
 ]
