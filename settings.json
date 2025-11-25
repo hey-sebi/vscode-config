@@ -187,7 +187,9 @@
   ],
   "cmake.showOptionsMovedNotification": false,
   "remote.SSH.remotePlatform": {
-    "mlr-lb-161": "linux"
+    "mlr-lb-161": "linux",
+    "mlr-lb-161.dom-mlr": "linux",
+    "ws": "linux"
   },
   // -------------------------------------------------------------------
   // VSCode VIM settings
@@ -201,40 +203,24 @@
   "vim.ignorecase": true,
   "vim.smartcase": true,
   "vim.incsearch": true,
-  // Values for Github Dark:
-  // -------------------------------------------------------------------
-  // Background color of current search match
-  // "vim.searchMatchColor": "#008000",
-  // Background color of non-current search matches
-  // "vim.searchHighlightColor": "#754785",
-  // -------------------------------------------------------------------
-  // Values for Tokyo Night:
-  // -------------------------------------------------------------------
-  // // Background color of current search match
-  // "vim.searchMatchColor": "#0db9d7",
-  // // match border for search highlighting to vim.searchMatchColor
-  // "workbench.colorCustomizations": {
-  //   "editor.findMatchBorder": "#0db9d7"
-  // },
-  // // Foreground color of current search match
-  // "vim.searchMatchTextColor": "#ffffff",
-  // // Background color of non-current search matches
-  // "vim.searchHighlightColor": "#754785",
-  // // Foreground of non-current search matches
-  // "vim.searchHighlightTextColor": "#ffffff",
-  // -------------------------------------------------------------------
-  // Values for Cattppuccin Macchiato:
-  // -------------------------------------------------------------------
-  "workbench.colorCustomizations": {
-    // match border for earch highlighting to vim.searchMatchColor
-    "editor.findMatchBorder": "#0db9d7",
-    "editor.findMatchBackground": "#0db9d7",
-    "editor.findMatchForeground": "#ffffff",
 
-    // Match to vim.searchMatchTextColor
-    "editor.findMatchHighlightBackground": "#754785",
-    "editor.findMatchHighlightForeground": "#ffffff",
+  "workbench.colorCustomizations": {
+    "[Catppuccin Mocha]": {
+      // https://catppuccin.com/palette/
+      // match border for earch highlighting to vim.searchMatchColor
+      "editor.findMatchBorder": "#89b4fa",
+      "editor.findMatchBackground": "#89b4fa",
+      "editor.findMatchForeground": "#ffffff",
+
+      // Match to vim.searchMatchTextColor
+      "editor.findMatchHighlightBackground": "#8c4ea880",
+      "editor.findMatchHighlightForeground": "#ffffff80",
+
+     "editorIndentGuide.background1": "#45475a", // Surface1
+     "editorIndentGuide.activeBackground1": "#45475a"
+    }
   },
+
   // Background color of current search match
   "vim.searchMatchColor": "#0db9d7",
   // Foreground color of current search match
@@ -328,7 +314,7 @@
       // this color was taken from wezterm catppucin as it's a bit smoother
       "base": "#24273a",
       "mantle": "#24273a",
-      "crust": "#24273a",
+      "crust": "#24273a"
     },
   },
   // -------------------------------------------------------------
@@ -354,5 +340,8 @@
     "scminput": false,
     "jsonc": false
   },
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
