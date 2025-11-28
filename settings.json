@@ -10,6 +10,10 @@
   "editor.minimap.enabled": false,
   // "editor.fontFamily": "Meslo LGL Mono Nerd Font", //JetBrains Mono Nerd Font",
   "editor.fontFamily": "JetBrains Mono Nerd Font",
+  "editor.fontWeight": "500",
+  "editor.fontVariations": true,
+  "editor.fontLigatures": false,
+  "editor.renderWhitespace": "none",
   "terminal.integrated.fontFamily": "Consolas",
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.autoReplies": {
@@ -104,7 +108,6 @@
     "*.rcp": "cdl",
     "*impl.h": "cpp"
   },
-  "editor.renderWhitespace": "none",
   "[cpp]": {
     "editor.wordBasedSuggestions": "allDocuments",
     "editor.suggest.insertMode": "insert",
@@ -204,22 +207,7 @@
   "vim.smartcase": true,
   "vim.incsearch": true,
 
-  "workbench.colorCustomizations": {
-    "[Catppuccin Mocha]": {
-      // https://catppuccin.com/palette/
-      // match border for earch highlighting to vim.searchMatchColor
-      "editor.findMatchBorder": "#89b4fa",
-      "editor.findMatchBackground": "#89b4fa",
-      "editor.findMatchForeground": "#ffffff",
-
-      // Match to vim.searchMatchTextColor
-      "editor.findMatchHighlightBackground": "#8c4ea880",
-      "editor.findMatchHighlightForeground": "#ffffff80",
-
-     "editorIndentGuide.background1": "#45475a", // Surface1
-     "editorIndentGuide.activeBackground1": "#45475a"
-    }
-  },
+  // -------------------------------------------------------------
 
   // Background color of current search match
   "vim.searchMatchColor": "#0db9d7",
@@ -301,9 +289,41 @@
   "vim.highlightedyank.color": "#a9dc7660",
   "vim.highlightedyank.duration": 350,
   "vim.camelCaseMotion.enable": true,
-  // -------------------------------------------------------------
-  // Settings specifically for Catppucin themes
-  // -------------------------------------------------------------
+
+  // make the window's titlebar use the workbench colors
+  "window.titleBarStyle": "custom",
+  // main menu in the side bar as hamburger menu
+  "window.menuBarVisibility": "compact",
+  "C_Cpp.codeFolding": "disabled",
+  "C_Cpp.default.intelliSenseMode": "msvc-x86",
+  /// Control CPU load for intellisense parsing
+  "C_Cpp.workspaceParsingPriority": "high",
+  "workbench.activityBar.location": "top",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  //  Themes and colors
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorCustomizations": {
+    "[Catppuccin Mocha]": {
+      // https://catppuccin.com/palette/
+      // match border for earch highlighting to vim.searchMatchColor
+      "editor.findMatchBorder": "#89b4fa",
+      "editor.findMatchBackground": "#89b4fa",
+      "editor.findMatchForeground": "#ffffff",
+
+      // Match to vim.searchMatchTextColor
+      "editor.findMatchHighlightBackground": "#8c4ea880",
+      "editor.findMatchHighlightForeground": "#ffffff80",
+
+     "editorIndentGuide.background1": "#45475a", // Surface1
+     "editorIndentGuide.activeBackground1": "#45475a"
+    }
+  },
   "catppuccin.accentColor": "mauve",
   "catppuccin.bracketMode": "neovim",
   "catppuccin.italicKeywords": false,
@@ -311,37 +331,10 @@
   "catppuccin.boldKeywords": true,
   "catppuccin.colorOverrides": {
     "macchiato": {
-      // this color was taken from wezterm catppucin as it's a bit smoother
+      // this color was taken from wezterm catppuccin as it's a bit smoother
       "base": "#24273a",
       "mantle": "#24273a",
       "crust": "#24273a"
     },
-  },
-  // -------------------------------------------------------------
-
-  // make the window's titlebar use the workbench colors
-  "window.titleBarStyle": "custom",
-  "C_Cpp.codeFolding": "disabled",
-  "C_Cpp.default.intelliSenseMode": "msvc-x86",
-  /// Control CPU load for intellisense parsing
-  "C_Cpp.workspaceParsingPriority": "high",
-  "C_Cpp.intelliSenseCachePath": "D:\\vscode_cache\\Microsoft\\vscode-cpptools",
-  "workbench.activityBar.location": "top",
-  "codeium.enableConfig": {
-    "*": false
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "jsonc": false
-  },
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 }

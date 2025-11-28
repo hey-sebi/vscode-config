@@ -288,18 +288,24 @@
     "key": "space e",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
   },
-  // {
-  //   // Hide explorer sidebar and focus editor -- when already in sidebar
-  //   "args": {
-  //     "commands": [
-  //       "workbench.action.toggleSidebarVisibility",
-  //       "workbench.action.focusActiveEditorGroup"
-  //     ]
-  //   },
-  //   "command": "runCommands",
-  //   "key": "space e",
-  //   "when": "vim.mode != 'Disabled' && sideBarFocus && !inputFocus"
-  // },
+  {
+    // Hide explorer sidebar and focus editor -- when already in sidebar
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    "command": "runCommands",
+    "key": "space e",
+    "when": "vim.mode != 'Disabled' && sideBarFocus && !inputFocus"
+  },
+  {
+    // Hide sidebar and focus editor -- when sidebar already visible and in editor
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "space e",
+    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible"
+  },
   {
     // open version control "goto git" panel
     "args": {
@@ -312,12 +318,6 @@
     "key": "space g g",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
-  // {
-  //   // Hide sidebar and focus editor -- when sidebar already visible and in editor
-  //   "command": "workbench.action.toggleSidebarVisibility",
-  //   "key": "space e",
-  //   "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible"
-  // },
   {
    // Toggle sidebar visibility
     "key": "ctrl+shift+-",
