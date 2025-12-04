@@ -221,11 +221,10 @@
   // -------------------------------------------------------------------
   "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindings": [
-    // {
-    //   // call :nohl (no highlight)
-    //   "before": [" ", "n" ],
-    //   "commands": [ ":nohl" ]
-    // },
+    {
+      "before": ["<ESC>"],
+      "commands": [ ":nohl" ]
+    },
     {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
       "before": [ "u" ],
@@ -240,51 +239,51 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       // center screen after using C-u
-      "before": [ "C-u" ],
-      "after": [ "C-u", "z", "z" ]
+      "before": [ "<C-u>" ],
+      "after": [ "<C-u>", "z", "z" ]
     },
     {
       // center screen after using C-d
-      "before": [ "C-d" ],
-      "after": [ "C-d", "z", "z" ]
+      "before": [ "<C-d>" ],
+      "after": [ "<C-d>", "z", "z" ]
     },
 
     // Pasting without overwriting the paste buffer
-    // {
-    //   "before": [" ", "p"],
-    //   "after": ["\"", "_", "d", "P"]
-    // },
-    // {
-    //   "before": [" ", "P"],
-    //   "after": ["\"", "_", "d", "p"]
-    // },
-    // {
-    //   "before": [" ", "g", "p"],
-    //   "after": ["\"", "_", "d", "g", "P"]
-    // },
-    // {
-    //   "before": [" ", "g", "P"],
-    //   "after": ["\"", "_", "d", "g", "p"]
-    // }
+    {
+      "before": ["<space>", "p"],
+      "after": ["\"", "_", "d", "P"]
+    },
+    {
+      "before": ["<space>", "P"],
+      "after": ["\"", "_", "d", "p"]
+    },
+    {
+      "before": ["<space>", "g", "p"],
+      "after": ["\"", "_", "d", "g", "P"]
+    },
+    {
+      "before": ["<space>", "g", "P"],
+      "after": ["\"", "_", "d", "g", "p"]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     // Pasting without overwriting the paste buffer
-    // {
-    //   "before": [" ", "p"],
-    //   "after": ["\"", "_", "d", "P"]
-    // },
-    // {
-    //   "before": [" ", "P"],
-    //   "after": ["\"", "_", "d", "p"]
-    // },
-    // {
-    //   "before": [" ", "g", "p"],
-    //   "after": ["\"", "_", "d", "g", "P"]
-    // },
-    // {
-    //   "before": [" ", "g", "P"],
-    //   "after": ["\"", "_", "d", "g", "p"]
-    // }
+    {
+      "before": ["<space>", "p"],
+      "after": ["\"", "_", "d", "P"]
+    },
+    {
+      "before": ["<space>", "P"],
+      "after": ["\"", "_", "d", "p"]
+    },
+    {
+      "before": ["<space>", "g", "p"],
+      "after": ["\"", "_", "d", "g", "P"]
+    },
+    {
+      "before": ["<space>", "g", "P"],
+      "after": ["\"", "_", "d", "g", "p"]
+    }
   ],
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "#a9dc7660",
