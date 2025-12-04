@@ -13,6 +13,7 @@
   "editor.fontWeight": "500",
   "editor.fontVariations": true,
   "editor.fontLigatures": false,
+  "editor.fontSize": 15,
   "editor.renderWhitespace": "none",
   "terminal.integrated.fontFamily": "Consolas",
   "terminal.integrated.scrollback": 10000,
