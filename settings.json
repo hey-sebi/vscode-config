@@ -222,10 +222,6 @@
   "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<ESC>"],
-      "commands": [ ":nohl" ]
-    },
-    {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
       "before": [ "u" ],
       "commands": [ "undo" ]
