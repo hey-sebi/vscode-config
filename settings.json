@@ -166,9 +166,7 @@
   // editor or view
   "terminal.integrated.defaultLocation": "view",
   "grunt.autoDetect": "on",
-  "workbench.settings.applyToAllProfiles": [
-    "files.trimTrailingWhitespace"
-  ],
+  "workbench.settings.applyToAllProfiles": ["files.trimTrailingWhitespace"],
   "diffEditor.ignoreTrimWhitespace": false,
   "git.suggestSmartCommit": false,
   "git.blame.editorDecoration.enabled": true,
@@ -211,37 +209,54 @@
   // -------------------------------------------------------------
 
   // Background color of current search match
-  "vim.searchMatchColor": "#0db9d7",
-  // Foreground color of current search match
-  "vim.searchMatchTextColor": "white",
-  // Background color of non-current search matches
-  "vim.searchHighlightColor": "#754785",
-  // Foreground of non-current search matches
-  "vim.searchHighlightTextColor": "#ffffff",
+  // "vim.searchMatchColor": "#0db9d7",
+  // // Foreground color of current search match
+  // "vim.searchMatchTextColor": "white",
+  // // Background color of non-current search matches
+  // "vim.searchHighlightColor": "#754785",
+  // // Foreground of non-current search matches
+  // "vim.searchHighlightTextColor": "#ffffff",
+  // //
+  // "vim.highlightedyank.color": "#a9dc7660",
+
+  // -------------------------------------------------------------
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 350,
+  "vim.camelCaseMotion.enable": true,
+
+  // Current search match (IncSearch-equivalent)
+  "vim.searchMatchColor": "#ff9e64", // TokyoNight orange
+  "vim.searchMatchTextColor": "#1a1b26", // base background (high contrast)
+  // Other search matches
+  "vim.searchHighlightColor": "#7dcfff66", // cyan with alpha
+  "vim.searchHighlightTextColor": "#c0caf5",
+  // Yank highlight (Visual-like, subtle)
+  "vim.highlightedyank.color": "#3b426180", // selection bg with alpha
+
   // -------------------------------------------------------------------
   "vim.smartRelativeLine": true,
   "vim.normalModeKeyBindings": [
     {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before": [ "u" ],
-      "commands": [ "undo" ]
+      "before": ["u"],
+      "commands": ["undo"]
     },
     {
       // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before": [ "<C-r>" ],
-      "commands": [ "redo" ]
+      "before": ["<C-r>"],
+      "commands": ["redo"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       // center screen after using C-u
-      "before": [ "<C-u>" ],
-      "after": [ "<C-u>", "z", "z" ]
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
     },
     {
       // center screen after using C-d
-      "before": [ "<C-d>" ],
-      "after": [ "<C-d>", "z", "z" ]
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
     },
 
     // Pasting without overwriting the paste buffer
@@ -281,10 +296,6 @@
       "after": ["\"", "_", "d", "g", "p"]
     }
   ],
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.color": "#a9dc7660",
-  "vim.highlightedyank.duration": 350,
-  "vim.camelCaseMotion.enable": true,
 
   // make the window's titlebar use the workbench colors
   "window.titleBarStyle": "custom",
@@ -303,7 +314,7 @@
   },
 
   //  Themes and colors
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.colorCustomizations": {
     "[Catppuccin Mocha]": {
       // https://catppuccin.com/palette/
@@ -316,8 +327,103 @@
       "editor.findMatchHighlightBackground": "#8c4ea880",
       "editor.findMatchHighlightForeground": "#ffffff80",
 
-     "editorIndentGuide.background1": "#45475a", // Surface1
-     "editorIndentGuide.activeBackground1": "#45475a"
+      "editorIndentGuide.background1": "#45475a", // Surface1
+      "editorIndentGuide.activeBackground1": "#45475a"
+    },
+
+    "[Tokyo Night Storm]": {
+      "foreground": "#959cbd",
+      "editorLineNumber.foreground": "#9aa5ce", // all normal line numbers
+      "editorLineNumber.activeForeground": "#ff9e64", // current line number
+      "panelTitle.activeBorder": "#3d59a1",
+      "panelTitle.activeForeground": "#bdc7f0",
+      "panelTitle.inactiveForeground": "#959cbd",
+      "tab.activeForeground": "#bdc7f0",
+      "tab.inactiveForeground": "#959cbd",
+      "breadcrumb.foreground": "#959cbd",
+      "breadcrumb.focusForeground": "#bdc7f0",
+      "breadcrumb.activeSelectionForeground": "#bdc7f0",
+      "statusBar.foreground": "#bdc7f0",
+      "list.focusForeground": "#bdc7f0",
+      "list.hoverForeground": "#bdc7f0",
+      "list.activeSelectionForeground": "#bdc7f0",
+      "list.inactiveSelectionForeground": "#bdc7f0",
+      "list.inactiveSelectionBackground": "#202330",
+      "sideBar.foreground": "#959cbd",
+      "dropdown.foreground": "#959cbd",
+      "menu.foreground": "#bdc7f0",
+      "menubar.selectionForeground": "#bdc7f0",
+      "input.foreground": "#959cbd",
+      "input.placeholderForeground": "#959cbd",
+      "activityBar.foreground": "#bdc7f0",
+      "activityBar.inactiveForeground": "#787c99",
+      "gitDecoration.ignoredResourceForeground": "#696d87",
+      // CURRENT match — dark, readable, rock solid
+      "editor.findMatchBackground": "#ff9e6433",
+      "editor.findMatchBorder": "#ff9e64",
+      // OTHER matches
+      "editor.findMatchHighlightBackground": "#7dcfff40"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night Storm]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "meta.var.expr storage.type",
+            "keyword.control.flow",
+            "keyword.control.return",
+            "meta.directive.vue punctuation.separator.key-value.html",
+            "meta.directive.vue entity.other.attribute-name.html",
+            "tag.decorator.js entity.name.tag.js",
+            "tag.decorator.js punctuation.definition.tag.js",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "comment keyword.codetag.notation",
+            "comment.block.documentation keyword",
+            "comment.block.documentation storage.type.class"
+          ],
+          "settings": {
+            "foreground": "#bb9af7"
+          }
+        },
+        {
+          "scope": ["comment", "punctuation.definition.comment"],
+          "settings": {
+            "foreground": "#9aa5ce",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": ["comment.block.documentation entity.name.type.instance"],
+          "settings": {
+            "foreground": "#73daca",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            "comment.block.documentation entity.name.type punctuation.definition.bracket"
+          ],
+          "settings": {
+            "foreground": "#bb9af7"
+          }
+        },
+        {
+          "scope": ["comment.block.documentation variable"],
+          "settings": {
+            "foreground": "#e0af68",
+            "fontStyle": "italic"
+          }
+        }
+      ]
     }
   },
   "catppuccin.accentColor": "mauve",
@@ -331,6 +437,6 @@
       "base": "#24273a",
       "mantle": "#24273a",
       "crust": "#24273a"
-    },
-  },
+    }
+  }
 }
