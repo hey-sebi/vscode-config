@@ -25,9 +25,59 @@
   "update.mode": "default",
   "zenMode.showTabs": "none",
   "rewrap.wrappingColumn": 90,
+  "[log]": {
+    "editor.largeFileOptimizations": false
+  },
+  "logFileHighlighter.customPatterns": [
+    {
+      // also highlight timestamps in this format: YYYY.MM.DD HH:MM:SS-sss
+      "pattern": "\\d{4}\\.\\d{2}\\.\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}-\\d{3}",
+      "foreground": "#959cbd"
+    },
+    {
+      "pattern": "\\btrace\\b",
+      "patternFlags": "i",
+      "foreground": "#8dbaf8"
+    },
+    {
+      "pattern": "\\bdebug\\b",
+      "patternFlags": "i",
+      "foreground": "#6aa9ff"
+    },
+    {
+      "pattern": "\\binfo\\b",
+      "patternFlags": "i",
+      "foreground": "#00c853"
+    },
+    {
+      "pattern": "\\bwarn(ing)?\\b",
+      "patternFlags": "i",
+      "foreground": "#ffb300"
+    },
+    {
+      "pattern": "\\berror\\b",
+      "patternFlags": "i",
+      "foreground": "#ff5252",
+      "fontWeight": "bold"
+    },
+    {
+      "pattern": "\\bfatal\\b",
+      "patternFlags": "i",
+      "foreground": "#ff1744",
+      "fontWeight": "bold"
+    },
+    {
+      "pattern": "\\bcritical\\b",
+      "patternFlags": "i",
+      "foreground": "#ff1744",
+      "fontWeight": "bold"
+    }
+  ],
+
   // Configure file associations to languages (e.g. "*.extension": "html"). These have
   // precedence over the default associations of the languages installed.
   "files.associations": {
+    "*.log": "log",
     "*.inc": "cpp",
     "*.h": "cpp",
     "*.in": "cpp",
@@ -205,21 +255,6 @@
   "vim.ignorecase": true,
   "vim.smartcase": true,
   "vim.incsearch": true,
-
-  // -------------------------------------------------------------
-
-  // Background color of current search match
-  // "vim.searchMatchColor": "#0db9d7",
-  // // Foreground color of current search match
-  // "vim.searchMatchTextColor": "white",
-  // // Background color of non-current search matches
-  // "vim.searchHighlightColor": "#754785",
-  // // Foreground of non-current search matches
-  // "vim.searchHighlightTextColor": "#ffffff",
-  // //
-  // "vim.highlightedyank.color": "#a9dc7660",
-
-  // -------------------------------------------------------------
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 350,
   "vim.camelCaseMotion.enable": true,
@@ -338,7 +373,6 @@
       "panelTitle.activeBorder": "#3d59a1",
       "panelTitle.activeForeground": "#bdc7f0",
       "panelTitle.inactiveForeground": "#959cbd",
-      "tab.activeForeground": "#bdc7f0",
       "tab.inactiveForeground": "#959cbd",
       "breadcrumb.foreground": "#959cbd",
       "breadcrumb.focusForeground": "#bdc7f0",
@@ -346,9 +380,9 @@
       "statusBar.foreground": "#bdc7f0",
       "list.focusForeground": "#bdc7f0",
       "list.hoverForeground": "#bdc7f0",
-      "list.activeSelectionForeground": "#bdc7f0",
-      "list.inactiveSelectionForeground": "#bdc7f0",
-      "list.inactiveSelectionBackground": "#202330",
+      // "list.activeSelectionForeground": "#bdc7f0",
+      // "list.inactiveSelectionForeground": "#bdc7f0",
+      // "list.inactiveSelectionBackground": "#202330",
       "sideBar.foreground": "#959cbd",
       "dropdown.foreground": "#959cbd",
       "menu.foreground": "#bdc7f0",
@@ -362,7 +396,20 @@
       "editor.findMatchBackground": "#ff9e6433",
       "editor.findMatchBorder": "#ff9e64",
       // OTHER matches
-      "editor.findMatchHighlightBackground": "#7dcfff40"
+      "editor.findMatchHighlightBackground": "#7dcfff40",
+      // --- Tabs ---
+      "tab.activeBackground": "#292e42", // a bit lighter than the editor bg
+      "tab.unfocusedActiveBackground": "#292e42",
+      "tab.activeBorderTop": "#ff9e64", // orange line at the top of the active tab
+      "tab.activeForeground": "#c0caf5", // keep text crisp
+      // --- Explorer / Lists ---
+      // When Explorer has focus
+      "list.activeSelectionBackground": "#3b4261", // standard tokyonight selection tone
+      "list.activeSelectionForeground": "#c0caf5",
+      // When Explorer does NOT have focus
+      // "list.inactiveSelectionBackground": "#523624",
+      "list.inactiveSelectionBackground": "#5a341f",
+      "list.inactiveSelectionForeground": "#c0caf5"
     }
   },
   "editor.tokenColorCustomizations": {

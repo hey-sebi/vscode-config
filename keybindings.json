@@ -309,19 +309,16 @@
   {
     // open version control "goto git" panel
     "args": {
-      "commands": [
-        "workbench.view.scm",
-        "workbench.scm.focus"
-      ]
+      "commands": ["workbench.view.scm", "workbench.scm.focus"]
     },
     "command": "runCommands",
     "key": "space g g",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-   // Toggle sidebar visibility
+    // Toggle sidebar visibility
     "key": "ctrl+shift+-",
-    "command": "workbench.action.toggleSidebarVisibility",
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   {
     // Focus tab to the left (in same group / split)
@@ -662,5 +659,42 @@
     "key": "space m C",
     "command": "bookmarks.clearFromAllFiles",
     "when": "vim.mode == 'Normal' &&  (editorTextFocus || !inputFocus)"
+  },
+  // Problem panel ~~ nvim quickfix list navigation
+  {
+    // jump to previous next from problem list
+    "key": "space j n",
+    "command": "editor.action.marker.nextInFiles",
+    "when": "(editorTextFocus || !inputFocus) && vim.mode == 'Normal'"
+  },
+  {
+    // jump to previous entry from problem list
+    "key": "space j p",
+    "command": "editor.action.marker.prevInFiles",
+    "when": "(editorTextFocus || !inputFocus) && vim.mode == 'Normal'"
+  },
+  {
+    // view / open problem list
+    "key": "space j o",
+    "command": "workbench.actions.view.problems",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // close / hide problem list
+    "key": "space j c",
+    "command": "workbench.action.closePanel",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // toggle the terminal
+    "key": "space t t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    // toggle the terminal
+    "key": "ctrl-\\",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "vim.mode == 'Normal'"
   }
 ]
