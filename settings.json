@@ -469,6 +469,17 @@
             "foreground": "#e0af68",
             "fontStyle": "italic"
           }
+        },
+        {
+          "scope": [
+            "variable.other.unknown.cpp",
+            "variable.other.unknown",
+            "variable.other",
+            "variable.snake-case.cpp"
+          ],
+          "settings": {
+            "foreground": "#c0caf5" // Tokyo Night normal variable color
+          }
         }
       ]
     }
