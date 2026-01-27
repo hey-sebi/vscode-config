@@ -496,5 +496,6 @@
       "mantle": "#24273a",
       "crust": "#24273a"
     }
-  }
+  },
+  "git.openRepositoryInParentFolders": "never"
 }
