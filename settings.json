@@ -9,69 +9,101 @@
   // Controls if the minimap is shown
   "editor.minimap.enabled": false,
   // "editor.fontFamily": "Meslo LGL Mono Nerd Font", //JetBrains Mono Nerd Font",
-  "editor.fontFamily": "JetBrains Mono Nerd Font",
-  "editor.fontWeight": "500",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrains Mono', Consolas, monospace",
+  // "editor.fontFamily": "Consolas",
+  // "editor.fontWeight": 500,
+  // "editor.letterSpacing": 0.5,
   "editor.fontVariations": true,
   "editor.fontLigatures": false,
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.renderWhitespace": "none",
-  "terminal.integrated.fontFamily": "Consolas",
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.letterSpacing": 1,
   "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.altClickMovesCursor": false,
   "terminal.integrated.autoReplies": {
-    "Terminate batch job (Y/N)": "Y\r"
+    "Terminate batch job (Y/N)": "Y\r",
   },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe",
+      ],
+      "args": [],
+      "icon": "terminal-cmd",
+    },
+    "Git Bash": {
+      "source": "Git Bash",
+    },
+  },
+  // prevent VSCode from modifying the terminal colors
+  "terminal.integrated.minimumContrastRatio": 1,
+  // disable usage of italics
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // editor or view
+  "terminal.integrated.defaultLocation": "view",
   // Configure whether you receive automatic updates from an update channel. Requires a
   // restart after change.
   "update.mode": "default",
   "zenMode.showTabs": "none",
   "rewrap.wrappingColumn": 90,
   "[log]": {
-    "editor.largeFileOptimizations": false
+    "editor.largeFileOptimizations": false,
   },
   "logFileHighlighter.customPatterns": [
     {
       // also highlight timestamps in this format: YYYY.MM.DD HH:MM:SS-sss
       "pattern": "\\d{4}\\.\\d{2}\\.\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}-\\d{3}",
-      "foreground": "#959cbd"
+      "foreground": "#959cbd",
     },
     {
       "pattern": "\\btrace\\b",
       "patternFlags": "i",
-      "foreground": "#8dbaf8"
+      "foreground": "#8dbaf8",
     },
     {
       "pattern": "\\bdebug\\b",
       "patternFlags": "i",
-      "foreground": "#6aa9ff"
+      "foreground": "#6aa9ff",
     },
     {
       "pattern": "\\binfo\\b",
       "patternFlags": "i",
-      "foreground": "#00c853"
+      "foreground": "#00c853",
     },
     {
       "pattern": "\\bwarn(ing)?\\b",
       "patternFlags": "i",
-      "foreground": "#ffb300"
+      "foreground": "#ffb300",
     },
     {
       "pattern": "\\berror\\b",
       "patternFlags": "i",
       "foreground": "#ff5252",
-      "fontWeight": "bold"
+      "fontWeight": "bold",
     },
     {
       "pattern": "\\bfatal\\b",
       "patternFlags": "i",
       "foreground": "#ff1744",
-      "fontWeight": "bold"
+      "fontWeight": "bold",
     },
     {
       "pattern": "\\bcritical\\b",
       "patternFlags": "i",
       "foreground": "#ff1744",
-      "fontWeight": "bold"
-    }
+      "fontWeight": "bold",
+    },
   ],
 
   // Configure file associations to languages (e.g. "*.extension": "html"). These have
@@ -157,12 +189,12 @@
     "valarray": "cpp",
     "variant": "cpp",
     "*.rcp": "cdl",
-    "*impl.h": "cpp"
+    "*impl.h": "cpp",
   },
   "[cpp]": {
     "editor.wordBasedSuggestions": "allDocuments",
     "editor.suggest.insertMode": "insert",
-    "editor.semanticHighlighting.enabled": true
+    "editor.semanticHighlighting.enabled": true,
   },
   "editor.copyWithSyntaxHighlighting": false,
   "editor.largeFileOptimizations": false,
@@ -173,48 +205,24 @@
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.autoClosingQuotes": "never",
   "editor.autoSurround": "never",
-  "terminal.integrated.altClickMovesCursor": false,
   "search.exclude": {
     "**/node_modules": false,
     "**/__history": true,
-    "**/__recovery": true
+    "**/__recovery": true,
   },
   "files.watcherExclude": {
     "**/__history": true,
     "**/__recovery": true,
     "**/node_modules/*/**": false,
-    "install/**": true
-  },
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    }
+    "install/**": true,
   },
   "editor.accessibilitySupport": "off",
   "explorer.autoRevealExclude": {
     "**/node_modules": false,
-    "install/**": true
+    "install/**": true,
   },
   "explorer.confirmDelete": false,
   "editor.semanticHighlighting.enabled": true,
-  // prevent VSCode from modifying the terminal colors
-  "terminal.integrated.minimumContrastRatio": 1,
-  // disable usage of italics
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  // editor or view
-  "terminal.integrated.defaultLocation": "view",
   "grunt.autoDetect": "on",
   "workbench.settings.applyToAllProfiles": ["files.trimTrailingWhitespace"],
   "diffEditor.ignoreTrimWhitespace": false,
@@ -235,103 +243,17 @@
   "cmake.configureOnEdit": false,
   "cmake.pinnedCommands": [
     "workbench.action.tasks.configureTaskRunner",
-    "workbench.action.tasks.runTask"
+    "workbench.action.tasks.runTask",
   ],
   "cmake.showOptionsMovedNotification": false,
   "remote.SSH.remotePlatform": {
     "mlr-lb-161": "linux",
     "mlr-lb-161.dom-mlr": "linux",
-    "ws": "linux"
+    "ws": "linux",
   },
-  // -------------------------------------------------------------------
-  // VSCode VIM settings
-  // -------------------------------------------------------------------
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
-  "vim.leader": "<space>",
-  "vim.useSystemClipboard": true,
-  "vim.hlsearch": true,
-  "vim.ignorecase": true,
-  "vim.smartcase": true,
-  "vim.incsearch": true,
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.duration": 350,
-  "vim.camelCaseMotion.enable": true,
-
-  // Current search match (IncSearch-equivalent)
-  "vim.searchMatchColor": "#ff9e64", // TokyoNight orange
-  "vim.searchMatchTextColor": "#1a1b26", // base background (high contrast)
-  // Other search matches
-  "vim.searchHighlightColor": "#7dcfff66", // cyan with alpha
-  "vim.searchHighlightTextColor": "#c0caf5",
-  // Yank highlight (Visual-like, subtle)
-  "vim.highlightedyank.color": "#3b426180", // selection bg with alpha
-
-  // -------------------------------------------------------------------
-  "vim.smartRelativeLine": true,
-  "vim.normalModeKeyBindings": [
-    {
-      // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before": ["u"],
-      "commands": ["undo"]
-    },
-    {
-      // workaround for bug https://github.com/VSCodeVim/Vim/issues/3201
-      "before": ["<C-r>"],
-      "commands": ["redo"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      // center screen after using C-u
-      "before": ["<C-u>"],
-      "after": ["<C-u>", "z", "z"]
-    },
-    {
-      // center screen after using C-d
-      "before": ["<C-d>"],
-      "after": ["<C-d>", "z", "z"]
-    },
-
-    // Pasting without overwriting the paste buffer
-    {
-      "before": ["<space>", "p"],
-      "after": ["\"", "_", "d", "P"]
-    },
-    {
-      "before": ["<space>", "P"],
-      "after": ["\"", "_", "d", "p"]
-    },
-    {
-      "before": ["<space>", "g", "p"],
-      "after": ["\"", "_", "d", "g", "P"]
-    },
-    {
-      "before": ["<space>", "g", "P"],
-      "after": ["\"", "_", "d", "g", "p"]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    // Pasting without overwriting the paste buffer
-    {
-      "before": ["<space>", "p"],
-      "after": ["\"", "_", "d", "P"]
-    },
-    {
-      "before": ["<space>", "P"],
-      "after": ["\"", "_", "d", "p"]
-    },
-    {
-      "before": ["<space>", "g", "p"],
-      "after": ["\"", "_", "d", "g", "P"]
-    },
-    {
-      "before": ["<space>", "g", "P"],
-      "after": ["\"", "_", "d", "g", "p"]
-    }
-  ],
 
   // make the window's titlebar use the workbench colors
   "window.titleBarStyle": "custom",
@@ -343,14 +265,11 @@
   "C_Cpp.workspaceParsingPriority": "high",
   "workbench.activityBar.location": "top",
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-
-  //  Themes and colors
-  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.colorCustomizations": {
     "[Catppuccin Mocha]": {
       // https://catppuccin.com/palette/
@@ -364,7 +283,7 @@
       "editor.findMatchHighlightForeground": "#ffffff80",
 
       "editorIndentGuide.background1": "#45475a", // Surface1
-      "editorIndentGuide.activeBackground1": "#45475a"
+      "editorIndentGuide.activeBackground1": "#45475a",
     },
 
     "[Tokyo Night Storm]": {
@@ -410,8 +329,13 @@
       // When Explorer does NOT have focus
       // "list.inactiveSelectionBackground": "#523624",
       "list.inactiveSelectionBackground": "#5a341f",
-      "list.inactiveSelectionForeground": "#c0caf5"
-    }
+      "list.inactiveSelectionForeground": "#c0caf5",
+    },
+    "[Rosé Pine Moon (no italics)]": {
+      "editorLineNumber.activeForeground": "#F6C177",
+      // make inactive numbers a touch dimmer so the active one stands out more
+      "editorLineNumber.foreground": "#6E6A86",
+    },
   },
   "editor.tokenColorCustomizations": {
     "[Tokyo Night Storm]": {
@@ -426,64 +350,82 @@
             "meta.directive.vue entity.other.attribute-name.html",
             "tag.decorator.js entity.name.tag.js",
             "tag.decorator.js punctuation.definition.tag.js",
-            "storage.modifier"
+            "storage.modifier",
           ],
           "settings": {
-            "fontStyle": ""
-          }
+            "fontStyle": "",
+          },
         },
         {
           "scope": [
             "comment keyword.codetag.notation",
             "comment.block.documentation keyword",
-            "comment.block.documentation storage.type.class"
+            "comment.block.documentation storage.type.class",
           ],
           "settings": {
-            "foreground": "#bb9af7"
-          }
+            "foreground": "#bb9af7",
+          },
         },
         {
           "scope": ["comment", "punctuation.definition.comment"],
           "settings": {
             "foreground": "#9aa5ce",
-            "fontStyle": ""
-          }
+            "fontStyle": "",
+          },
         },
         {
           "scope": ["comment.block.documentation entity.name.type.instance"],
           "settings": {
             "foreground": "#73daca",
-            "fontStyle": "italic"
-          }
+            "fontStyle": "italic",
+          },
         },
         {
           "scope": [
-            "comment.block.documentation entity.name.type punctuation.definition.bracket"
+            "comment.block.documentation entity.name.type punctuation.definition.bracket",
           ],
           "settings": {
-            "foreground": "#bb9af7"
-          }
+            "foreground": "#bb9af7",
+          },
         },
         {
           "scope": ["comment.block.documentation variable"],
           "settings": {
             "foreground": "#e0af68",
-            "fontStyle": "italic"
-          }
+            "fontStyle": "italic",
+          },
         },
         {
           "scope": [
             "variable.other.unknown.cpp",
             "variable.other.unknown",
             "variable.other",
-            "variable.snake-case.cpp"
+            "variable.snake-case.cpp",
           ],
           "settings": {
-            "foreground": "#c0caf5" // Tokyo Night normal variable color
-          }
-        }
-      ]
-    }
+            "foreground": "#c0caf5", // Tokyo Night normal variable color
+          },
+        },
+      ],
+    },
+    "[Rosé Pine Moon (no italics)]": {
+      "textMateRules": [
+        {
+          "name": "Comments - higher contrast",
+          "scope": [
+            "comment",
+            "comment.line",
+            "comment.block",
+            "comment.line.double-slash",
+            "comment.block.documentation",
+            "punctuation.definition.comment",
+          ],
+          "settings": {
+            "foreground": "#A6ADC8",
+          },
+        },
+      ],
+    },
   },
   "catppuccin.accentColor": "mauve",
   "catppuccin.bracketMode": "neovim",
@@ -495,8 +437,30 @@
       // this color was taken from wezterm catppuccin as it's a bit smoother
       "base": "#24273a",
       "mantle": "#24273a",
-      "crust": "#24273a"
-    }
+      "crust": "#24273a",
+    },
   },
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "cpp": true,
+    "vue": true
+  },
+  "scm.repositories.selectionMode": "single",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.nextEditSuggestions.fixes": false,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "material-icon-theme",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "protobuf.autoDetection.enabled": false,
+  "protobuf.renumber.onFormat": true,
+  "protobuf.maxLineLength": 90,
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "protobuf.autoDetection.prompted": true,
+  "chat.viewSessions.orientation": "stacked",
 }
