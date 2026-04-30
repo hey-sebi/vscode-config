@@ -181,6 +181,7 @@
   // -------------------------------------------------------------------
   // Git & SCM
   // -------------------------------------------------------------------
+  "git.addAICoAuthor": "off",
   "git.blame.editorDecoration.enabled": true,
   "git.blame.statusBarItem.enabled": false,
   "git.openRepositoryInParentFolders": "never",
@@ -495,6 +496,5 @@
       "icon": "terminal-powershell",
     },
   },
-  "workbench.colorTheme": "Tokyo Night Storm",
-  "git.addAICoAuthor": "off",
+  "workbench.colorTheme": "Tokyo Night Storm"
 }
